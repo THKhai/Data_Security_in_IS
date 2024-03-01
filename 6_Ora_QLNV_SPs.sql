@@ -65,3 +65,12 @@ insert into EMP_21127620(EMPNO,enname,job,mgr,hiredate,sal,comm,deptno) values (
 insert into EMP_21127620(EMPNO,enname,job,mgr,hiredate,sal,comm,deptno) values (7788, 'SCOTT','ANALYST',7566,TO_DATE('09-12-1982','DD-MM-YYYY'),3000,null,20);
 insert into EMP_21127620(EMPNO,enname,job,mgr,hiredate,sal,comm,deptno) values (7876,'ADAMS','CLERK',7788,TO_DATE('12-01-1983','DD-MM-YYYY'),1100,null,20);
 insert into EMP_21127620(EMPNO,enname,job,mgr,hiredate,sal,comm,deptno) values (7934,'MILLER','CLERK',7782,TO_DATE('23-01-1982','DD-MM-YYYY'),1300,null,10);
+
+-- KHANG ( BEGIN )
+-- KHANG (END)
+
+--TO?N (BEGIN)
+--TO?N (END)
+
+--KH?I (BEGIN)
+--KH?I (END)
