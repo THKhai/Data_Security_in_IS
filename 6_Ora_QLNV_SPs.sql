@@ -1,6 +1,9 @@
--- 21127620 - Tr?n Ho¨¤ng Kh?i
+-- NhÃ³m 6
+--21127620 Tráº§n HoÃ ng Kháº£i
+--21127705 Tá»« PhÆ°á»›c ToÃ n
+--21127622 BÃ¹i ChÃ­ Khang
 
--- Nh¨®m l?nh x¨®a c?u tr¨²c d? li?u
+-- NhÂ¨Â®m l?nh xÂ¨Â®a c?u trÂ¨Â²c d? li?u
 drop table SALGRADE_21127620; 
 drop table EMP_21127620;
 drop table DEPT_21127620;
@@ -29,7 +32,7 @@ create table EMP_21127620(
     DEPTNO number(2) not null 
 );
 
--- Th¨ºm kh¨®a ngo?i cho b?ng EMP
+-- ThÂ¨Âºm khÂ¨Â®a ngo?i cho b?ng EMP
 alter table EMP_21127620
 add foreign key (MGR) references EMP_21127620(EMPNO);
 alter table EMP_21127620
