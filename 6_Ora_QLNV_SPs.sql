@@ -93,7 +93,7 @@ BEGIN
     OPEN cursor_ FOR
         SELECT *
         FROM USER_TAB_COLS
-        WHERE table_name = 'EMP_21127622'
+        WHERE table_name = 'EMP_21127620'
         ORDER BY column_id;
     DBMS_SQL.RETURN_RESULT(cursor_); 
 END;
@@ -120,7 +120,7 @@ BEGIN
   OPEN sysRefCursor
   FOR 'SELECT TO_CHAR( SAL, :s ) AS ' || SALAlias
       || ', TO_CHAR( HIREDATE, :h ) AS ' || HIREDATEAlias
-      || ' FROM EMP_21127622' USING SALDisplayFormat, HIREDATEFormat;
+      || ' FROM EMP_21127620' USING SALDisplayFormat, HIREDATEFormat;
   DBMS_SQL.RETURN_RESULT(sysRefCursor);
 END;
 
@@ -134,7 +134,7 @@ AS
 BEGIN
     OPEN cursor_ FOR
         SELECT *
-        FROM EMP_21127622
+        FROM EMP_21127620
         WHERE SAL <= 2000 AND SAL >= 1000;
     DBMS_SQL.RETURN_RESULT(cursor_); 
 END;
