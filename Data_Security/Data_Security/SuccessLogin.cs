@@ -26,20 +26,34 @@ namespace Data_Security
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using(OracleConnection con = new OracleConnection(connectString))
-            {
-                string query = "select username from dba_users;";
-                con.Open();
-                OracleCommand cmd = new OracleCommand(query, con);
-                using(OracleDataAdapter ad =  new OracleDataAdapter(cmd))
-                {
-                    DataTable dt = new DataTable();
-                    ad.Fill(dt);
+           
+        }
 
+        private void SuccessLogin_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OracleConnection con = new OracleConnection(connectString))
+                {
+                    var query = "select * from dba_users order by USERNAME";
+                    OracleDataAdapter adapter = new OracleDataAdapter(query, con);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
                     dataGridView1.DataSource = dt;
                 }
-                con.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không đủ quyền hạn để truy vấn " + ex.Message, "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+                this.Hide();
+                Privilege pr = new Privilege(connectString);
+                pr.ShowDialog();
+                this.Show();
         }
     }
 }

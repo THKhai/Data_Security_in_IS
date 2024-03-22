@@ -49,8 +49,15 @@ namespace Data_Security
                 Console.WriteLine(id);
                 password = textBox2.Text;
                 Console.WriteLine(password);
+                if (id.ToLower() == "sys")
+                {
+                    connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password + ";DBA Privilege = SYSDBA;";
+                }
+                else
+                {
+                    connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password + ";";
+                }
                 //connectString = "Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = khainehaha)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = XE)));User Id = " + id + ";password =" + password + ";";
-                connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password + ";DBA Privilege = SYSDBA;" ;
                 
                 using (OracleConnection con = new OracleConnection(connectString))
                 {

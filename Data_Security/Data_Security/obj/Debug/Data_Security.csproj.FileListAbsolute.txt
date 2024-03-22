@@ -30,5 +30,7 @@ D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.csproj.CopyComplete
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.exe
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.pdb
-D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\bin\Debug\Oracle.DataAccess.dll
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.SuccessLogin.resources
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.Privilege.resources
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.Them_Role.resources
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.Them_User.resources

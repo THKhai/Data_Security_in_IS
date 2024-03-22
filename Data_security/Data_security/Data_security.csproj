@@ -38,7 +38,6 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Oracle.DataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.21.13.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -89,6 +88,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Privilege.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilege.Designer.cs">
+      <DependentUpon>Privilege.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuccessLogin.cs">
@@ -97,8 +102,23 @@
     <Compile Include="SuccessLogin.Designer.cs">
       <DependentUpon>SuccessLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Them_Role.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Them_Role.Designer.cs">
+      <DependentUpon>Them_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Them_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Them_User.Designer.cs">
+      <DependentUpon>Them_User.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilege.resx">
+      <DependentUpon>Privilege.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +131,12 @@
     </Compile>
     <EmbeddedResource Include="SuccessLogin.resx">
       <DependentUpon>SuccessLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Them_Role.resx">
+      <DependentUpon>Them_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Them_User.resx">
+      <DependentUpon>Them_User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
