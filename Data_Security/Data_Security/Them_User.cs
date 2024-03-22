@@ -13,7 +13,7 @@ namespace Data_Security
 {
     public partial class Them_User : Form
     {
-        string connectString = string.Empty;
+        string connectString = null;
         public Them_User(string connectString)
         {
             InitializeComponent();
@@ -31,11 +31,15 @@ namespace Data_Security
             {
                 using (OracleConnection conn = new OracleConnection(connectString))
                 {
-                    conn.Open();
-                    string query = "alter session set \"_ORACLE_SCRIPT\" =true;" +  " create user " + textBox1.Text.ToString() + " identified by " + textBox2.Text.ToString() + ";";
+
+                    string query = "alter session set \"_ORACLE_SCRIPT\" =true"; 
+                    string query_01 = " create user " + textBox1.Text.ToString() + " identified by " + textBox2.Text.ToString();
                     OracleCommand cmd = new OracleCommand(query, conn);
-                    cmd.ExecuteNonQuery(); 
-                    conn.Close();
+                    OracleCommand cmd_01 = new OracleCommand(query_01, conn);
+                    conn.Open();                    
+                    cmd.ExecuteNonQuery();
+                    cmd_01.ExecuteNonQuery();
+                    conn.Close();   
                 }
                 MessageBox.Show("Thêm Thành Công! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

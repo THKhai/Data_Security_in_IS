@@ -41,12 +41,21 @@ namespace Data_Security
                 using (OracleConnection conn = new OracleConnection(connectString))
                 {
                     conn.Open();
-                    string query_01 = "create role " + textBox2.Text;
-                    string query_02 = textBox2.Text;
-                    OracleCommand comm_01 = new OracleCommand(query_01, conn);
-                    OracleCommand comm_02 = new OracleCommand(query_02, conn);
-                    comm_01.ExecuteNonQuery();
-                    comm_02.ExecuteNonQuery();
+                    if (!string.IsNullOrEmpty(textBox2.Text))
+                    {
+                        string query_01 = "create role " + textBox2.Text;
+                        OracleCommand comm_01 = new OracleCommand(query_01, conn);
+                        comm_01.ExecuteNonQuery();
+                    }
+                    string[] queries = textBox1.Text.ToString().Split(';');
+                    foreach (string query in queries) { 
+                        if (!string.IsNullOrEmpty(query))
+                        {
+                            OracleCommand comm = new OracleCommand(query, conn);
+                            comm.ExecuteNonQuery();
+                        }
+                    }
+             
                     conn.Close();
                 }
                 MessageBox.Show("Thêm Thành Công ","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);

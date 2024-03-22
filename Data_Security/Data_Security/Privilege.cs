@@ -34,9 +34,24 @@ namespace Data_Security
         {
 
         }
-
+        // chỉnh sử button
         private void button1_Click(object sender, EventArgs e)
         {
+            if (role)
+            {
+                Them_Role New_role = new Them_Role(connectString);
+                New_role.ShowDialog();
+                load_Role();
+            }
+            else if (user)
+            {
+                ChinhSua_User cs_User = new ChinhSua_User(current_chosen, connectString);
+                cs_User.ShowDialog();
+            }
+            else
+            {z
+                MessageBox.Show("Thông báo lỗi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -150,17 +165,13 @@ namespace Data_Security
             if (role)
             {
                 Them_Role New_role = new Them_Role(connectString);
-                this.Hide();
                 New_role.ShowDialog();
-                this.Show();
                 load_Role();
             }
             else if (user)
             {
                 Them_User New_user = new Them_User( connectString);
-                this.Hide();
                 New_user.ShowDialog();
-                this.Show();
                 load_user();
             }
             else
@@ -222,8 +233,11 @@ namespace Data_Security
                     using (OracleConnection conn = new OracleConnection(connectString))
                     {
                         conn.Open();
-                        string query = "Drop role" + current_chosen;
+                        string query_01 = "alter session set \"_ORACLE_SCRIPT\"=true";
+                        string query = "Drop role " + current_chosen;
                         OracleCommand comm = new OracleCommand(query, conn);
+                        OracleCommand comm_01 = new OracleCommand(query_01, conn);
+                        comm_01.ExecuteNonQuery();
                         comm.ExecuteNonQuery();
                         conn.Close();
                     }
@@ -241,8 +255,11 @@ namespace Data_Security
                     using (OracleConnection conn = new OracleConnection(connectString))
                     {
                         conn.Open();
-                        string query = "Drop user" + current_chosen;
+                        string query_01 = "alter session set \"_ORACLE_SCRIPT\"=true";
+                        string query = "Drop user " + current_chosen;
                         OracleCommand comm = new OracleCommand(query, conn);
+                        OracleCommand comm_01 = new OracleCommand(query_01, conn);
+                        comm_01.ExecuteNonQuery();
                         comm.ExecuteNonQuery();
                         conn.Close();
                     }
