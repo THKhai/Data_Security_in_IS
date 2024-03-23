@@ -91,7 +91,7 @@ namespace Data_Security
                 {
                     using (OracleConnection con = new OracleConnection(connectString))
                     {
-                        string query = "select distinct  TABLE_NAME, PRIVILEGE from ALL_TAB_PRIVS WHERE GRANTEE = '" + User_Tab + "' and TABLE_NAME = '" + TABLE_NAME + "'";
+                        string query = "select distinct  GRANTEE, TABLE_NAME, PRIVILEGE from ALL_TAB_PRIVS WHERE GRANTEE = '" + User_Tab + "' and TABLE_NAME = '" + TABLE_NAME + "'";
                         OracleDataAdapter dataAdapter = new OracleDataAdapter(query, con);
                         DataTable dt = new DataTable();
                         dataAdapter.Fill(dt);
