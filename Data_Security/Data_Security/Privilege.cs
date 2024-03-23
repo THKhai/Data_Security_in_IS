@@ -39,14 +39,15 @@ namespace Data_Security
         {
             if (role)
             {
-                Them_Role New_role = new Them_Role(connectString);
-                New_role.ShowDialog();
+                ChinhSua_Role cs_role = new ChinhSua_Role(connectString);
+                cs_role.ShowDialog();
                 load_Role();
             }
             else if (user)
             {
                 ChinhSua_User cs_User = new ChinhSua_User(current_chosen, connectString);
                 cs_User.ShowDialog();
+                load_user();
             }
             else
             {
@@ -85,12 +86,12 @@ namespace Data_Security
             {
 
                 TABLE_NAME = dataGridView1.Rows[e.RowIndex].Cells["TABLE_NAME"].Value.ToString();
-                User_Tab = dataGridView1.Rows[e.RowIndex].Cells["GRANTOR"].Value.ToString();
+                User_Tab = dataGridView1.Rows[e.RowIndex].Cells["GRANTEE"].Value.ToString();
                 try
                 {
                     using (OracleConnection con = new OracleConnection(connectString))
                     {
-                        string query = "select distinct  TABLE_NAME, PRIVILEGE from ALL_TAB_PRIVS WHERE GRANTOR = '" + User_Tab + "' and TABLE_NAME = '" + TABLE_NAME + "'";
+                        string query = "select distinct  TABLE_NAME, PRIVILEGE from ALL_TAB_PRIVS WHERE GRANTEE = '" + User_Tab + "' and TABLE_NAME = '" + TABLE_NAME + "'";
                         OracleDataAdapter dataAdapter = new OracleDataAdapter(query, con);
                         DataTable dt = new DataTable();
                         dataAdapter.Fill(dt);
@@ -211,7 +212,7 @@ namespace Data_Security
             {
                 using (OracleConnection con = new OracleConnection(connectString))
                 {
-                    var query = "select distinct GRANTOR, TABLE_NAME from ALL_TAB_PRIVS order by GRANTOR";
+                    var query = "select distinct GRANTEE, TABLE_NAME from ALL_TAB_PRIVS order by GRANTEE";
                     OracleDataAdapter adapter = new OracleDataAdapter(query, con);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);

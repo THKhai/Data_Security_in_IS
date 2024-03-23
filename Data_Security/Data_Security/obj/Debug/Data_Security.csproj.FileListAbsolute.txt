@@ -72,3 +72,4 @@ F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\bin\Debug\System.Text.Js
 F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\bin\Debug\System.ValueTuple.xml
 F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.csproj.CopyComplete
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.ChinhSua_Role.resources

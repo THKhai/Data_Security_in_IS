@@ -19,6 +19,15 @@ namespace Data_Security
             this.connectString = connectString;
         }
 
+        public void GetLabelText(string text)
+        {
+            label1.Text = text;
+        }
+        public void Lock_text2()
+        {
+            textBox2.ReadOnly = true;
+            textBox2.Text = "Không khả dụng!!";
+        }
         private void Them_Role_Load(object sender, EventArgs e)
         {
 

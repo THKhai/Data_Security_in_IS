@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChinhSua_Role.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChinhSua_Role.Designer.cs">
+      <DependentUpon>ChinhSua_Role.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChinhSua_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="Them_User.Designer.cs">
       <DependentUpon>Them_User.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChinhSua_Role.resx">
+      <DependentUpon>ChinhSua_Role.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChinhSua_User.resx">
       <DependentUpon>ChinhSua_User.cs</DependentUpon>
     </EmbeddedResource>
