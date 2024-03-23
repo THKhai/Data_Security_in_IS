@@ -49,7 +49,7 @@ namespace Data_Security
                 cs_User.ShowDialog();
             }
             else
-            {z
+            {
                 MessageBox.Show("Thông báo lỗi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
