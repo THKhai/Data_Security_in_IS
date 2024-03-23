@@ -273,6 +273,12 @@ namespace Data_Security
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CapQuyen cp = new CapQuyen(connectString);
+            cp.ShowDialog();
+        }
+
         // USER button
         private void button3_Click(object sender, EventArgs e)
         {
