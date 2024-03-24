@@ -132,6 +132,12 @@
     <Compile Include="Them_User.Designer.cs">
       <DependentUpon>Them_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThuHoiQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThuHoiQuyen.Designer.cs">
+      <DependentUpon>ThuHoiQuyen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CapQuyen.resx">
       <DependentUpon>CapQuyen.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Them_User.resx">
       <DependentUpon>Them_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThuHoiQuyen.resx">
+      <DependentUpon>ThuHoiQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

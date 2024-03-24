@@ -279,6 +279,17 @@ namespace Data_Security
             cp.ShowDialog();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ThuHoiQuyen th = new ThuHoiQuyen(connectString);
+            th.ShowDialog();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         // USER button
         private void button3_Click(object sender, EventArgs e)
         {
