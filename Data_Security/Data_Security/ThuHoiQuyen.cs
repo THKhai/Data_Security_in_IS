@@ -107,7 +107,6 @@ namespace Data_Security
                         using (OracleConnection con = new OracleConnection(connectstr))
                         {
                             string query;
-                            string query2;
                             if (checkBox1.Checked == false)
                             {
                                 if (String.IsNullOrEmpty(textBox3.Text.ToString()) == true && String.IsNullOrEmpty(textBox4.Text.ToString()) == true)
@@ -132,13 +131,19 @@ namespace Data_Security
                                     }
                                     query = String.Format("REVOKE {0} ON {1} FROM {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
                                 }
+                                con.Open();
+                                OracleCommand comm = new OracleCommand(query, con);
+                                comm.ExecuteNonQuery();
+                                con.Close();
                             }
                             else
                             {
+                                string query1, query2;
                                 if (String.IsNullOrEmpty(textBox3.Text.ToString()) == true && String.IsNullOrEmpty(textBox4.Text.ToString()) == true)
                                 {
-                                    query = String.Format("REVOKE SELECT {0} ON {1} FROM {2}; GRANT SELECT {0} ON {1} TO {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
-
+                                    query1 = String.Format("REVOKE {0} ON {1} FROM {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
+                                    query2 = String.Format("GRANT {0} ON {1} TO {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
+                                    
                                 }
                                 else
                                 {
@@ -155,14 +160,16 @@ namespace Data_Security
                                     {
                                         temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
                                     }
-                                    query = String.Format("REVOKE SELECT {0} ON {1} FROM {2}; GRANT SELECT {0} ON {1} TO {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
+                                    query1 = String.Format("REVOKE {0} ON {1} FROM {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
+                                    query2 = String.Format("GRANT {0} ON {1} TO {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
                                 }
+                                con.Open();
+                                OracleCommand comm1 = new OracleCommand(query1, con);
+                                comm1.ExecuteNonQuery();
+                                OracleCommand comm2 = new OracleCommand(query2, con);
+                                comm2.ExecuteNonQuery();
+                                con.Close();
                             }
-                            con.Open();
-                            OracleCommand comm = new OracleCommand(query, con);
-                            comm.ExecuteNonQuery();
-                            con.Close();
-                
                             MessageBox.Show("Thu hồi quyền thành công");
                             this.Close();
                         }
