@@ -248,6 +248,7 @@ namespace Data_Security
                 {
                     MessageBox.Show("Thông Báo Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                load_Role();
             }
             else if (user)
             {
@@ -270,6 +271,7 @@ namespace Data_Security
                 {
                     MessageBox.Show("Thông Báo Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                load_user();
             }
         }
 
