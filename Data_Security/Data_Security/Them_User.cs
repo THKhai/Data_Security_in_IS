@@ -48,5 +48,10 @@ namespace Data_Security
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
