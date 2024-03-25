@@ -23,7 +23,6 @@ D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\bin\
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\bin\Debug\System.ValueTuple.xml
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.csproj.AssemblyReference.cache
-D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Form1.resources
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Properties.Resources.resources
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.csproj.GenerateResource.cache
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.csproj.CoreCompileInputs.cache
@@ -117,4 +116,8 @@ C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debu
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.CapQuyen.resources
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.ThuHoiQuyen.resources
 F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.ThuHoiQuyen.resources
+<<<<<<< HEAD
 F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Home.resources
+=======
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.Home.resources
+>>>>>>> f03a27cf396ba0a12ade5cdf9bd9e5197a66f89c
