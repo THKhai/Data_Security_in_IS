@@ -14,13 +14,13 @@ using System.Security.Cryptography;
 //using Oracle.DataAccess.Client;
 namespace Data_Security
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
         string SERVICE_NAME = null;
         string id = null;
         string password = null;
         string connectString = null;    
-        public Form1()
+        public Home()
         {
             InitializeComponent();
         }
