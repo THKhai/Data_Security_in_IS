@@ -274,17 +274,25 @@ namespace Data_Security
                 load_user();
             }
         }
-
+        private void load_data()
+        {
+            if (role)
+                load_Role();
+            else
+                load_user() ;
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             CapQuyen cp = new CapQuyen(connectString);
             cp.ShowDialog();
+            load_data();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             ThuHoiQuyen th = new ThuHoiQuyen(connectString);
             th.ShowDialog();
+            load_data();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
