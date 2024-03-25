@@ -19,7 +19,31 @@ namespace Data_Security
             connectstr = constr;
             InitializeComponent();
         }
-
+        private void TaoViewGioiHanSelect(string tendoituong,string tenbang,string caccotbihanche, OracleConnection con)
+        {
+            string query,query2;
+            string viewname = "V_" + tendoituong + tenbang;
+            query = String.Format("create or replace view {0} \r\nas\r\n    select {1} from sys.{2}", viewname,caccotbihanche,tenbang);
+            //query = "create or replace view V_DEMO \r\nas\r\n    select DIACHI from sys.BH_KHACHHANG";
+            query2 = String.Format("GRANT SELECT ON {0} to {1}", tenbang, tendoituong);
+            try
+            {
+             
+                    con.Open();
+                    OracleCommand comm = new OracleCommand(query, con);
+                    comm.ExecuteNonQuery();
+                    
+                    con.Close();
+                    con.Open();
+                    OracleCommand comm2 = new OracleCommand(query2, con);
+                    comm2.ExecuteNonQuery();
+                    con.Close();
+                
+         
+                MessageBox.Show("View "+ viewname +" đã được tạo");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
         private void CapQuyen_Load(object sender, EventArgs e)
         {
             label4.Text = "Đang thực hiện cấp quyền cho User";
@@ -57,7 +81,7 @@ namespace Data_Security
             label3.Text = "Trên bảng:";
             checkBox1.Hide();
         }
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             formstatus = 3;
@@ -116,7 +140,10 @@ namespace Data_Security
                                 {
                                     if(String.IsNullOrEmpty(textBox3.Text.ToString()) == false && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(),con);
                                         temp = temp.Replace("UPDATE", String.Format("UPDATE({0})", textBox4.Text.ToString().ToUpper()));
                                     }
                                     else if(String.IsNullOrEmpty(textBox3.Text.ToString()) == true && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
@@ -125,7 +152,10 @@ namespace Data_Security
                                     }
                                     else
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(), con);
                                     }
                                     query = String.Format("GRANT {0} ON {1} TO {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
                                 }
@@ -140,7 +170,10 @@ namespace Data_Security
                                 {
                                     if (String.IsNullOrEmpty(textBox3.Text.ToString()) == false && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(), con);
                                         temp = temp.Replace("UPDATE", String.Format("UPDATE({0})", textBox4.Text.ToString().ToUpper()));
                                     }
                                     else if (String.IsNullOrEmpty(textBox3.Text.ToString()) == true && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
@@ -149,15 +182,21 @@ namespace Data_Security
                                     }
                                     else
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(), con);
                                     }
                                     query = String.Format("GRANT {0} ON {1} TO {2} WITH GRANT OPTION", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
                                 }
                             }
-                            con.Open();
-                            OracleCommand comm = new OracleCommand(query, con);
-                            comm.ExecuteNonQuery();
-                            con.Close();
+                            if (temp != "")
+                            {
+                                con.Open();
+                                OracleCommand comm = new OracleCommand(query, con);
+                                comm.ExecuteNonQuery();
+                                con.Close();
+                            }
                             MessageBox.Show("Phân quyền thành công");
                             this.Close();
                         }
@@ -177,7 +216,10 @@ namespace Data_Security
                                 {
                                     if (String.IsNullOrEmpty(textBox3.Text.ToString()) == false && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(), con);
                                         temp = temp.Replace("UPDATE", String.Format("UPDATE({0})", textBox4.Text.ToString().ToUpper()));
                                     }
                                     else if (String.IsNullOrEmpty(textBox3.Text.ToString()) == true && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
@@ -186,7 +228,10 @@ namespace Data_Security
                                     }
                                     else
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(), con);
                                     }
                                     query = String.Format("GRANT {0} ON {1} TO {2}", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
                                 }
@@ -201,7 +246,10 @@ namespace Data_Security
                                 {
                                     if (String.IsNullOrEmpty(textBox3.Text.ToString()) == false && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(), con);
                                         temp = temp.Replace("UPDATE", String.Format("UPDATE({0})", textBox4.Text.ToString().ToUpper()));
                                     }
                                     else if (String.IsNullOrEmpty(textBox3.Text.ToString()) == true && String.IsNullOrEmpty(textBox4.Text.ToString()) == false)
@@ -210,15 +258,21 @@ namespace Data_Security
                                     }
                                     else
                                     {
-                                        temp = temp.Replace("SELECT", String.Format("SELECT({0})", textBox3.Text.ToString().ToUpper()));
+                                        temp = temp.Replace(", SELECT", "");
+                                        temp = temp.Replace("SELECT,", "");
+                                        temp = temp.Replace("SELECT", "");
+                                        TaoViewGioiHanSelect(textBox1.Text.ToString().ToUpper(), textBox2.Text.ToString().ToUpper(), textBox3.Text.ToString().ToUpper(), con);
                                     }
                                     query = String.Format("GRANT {0} ON {1} TO {2} WITH ADMIN OPTION", temp, textBox2.Text.ToString().ToUpper(), textBox1.Text.ToString().ToUpper());
                                 }
                             }
-                            con.Open();
-                            OracleCommand comm = new OracleCommand(query, con);
-                            comm.ExecuteNonQuery();
-                            con.Close();
+                            if (temp != "")
+                            {
+                                con.Open();
+                                OracleCommand comm = new OracleCommand(query, con);
+                                comm.ExecuteNonQuery();
+                                con.Close();
+                            }
                             MessageBox.Show("Phân quyền thành công");
                             this.Close();
                         }
