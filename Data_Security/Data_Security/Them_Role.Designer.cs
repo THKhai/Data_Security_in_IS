@@ -50,7 +50,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 121);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(631, 286);
+            this.textBox1.Size = new System.Drawing.Size(631, 309);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -74,9 +74,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(671, 348);
+            this.button1.Location = new System.Drawing.Point(664, 371);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 59);
+            this.button1.Size = new System.Drawing.Size(103, 59);
             this.button1.TabIndex = 4;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;

@@ -57,6 +57,7 @@ namespace Data_Security
             {
                 MessageBox.Show("Thông Báo Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            this.Close();
         }
     }
 }
