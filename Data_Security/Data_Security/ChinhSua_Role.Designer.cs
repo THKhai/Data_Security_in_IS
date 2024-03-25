@@ -1,6 +1,6 @@
 ﻿namespace Data_Security
 {
-    partial class ChinhSua_Role :Them_Role
+    partial class ChinhSua_Role
     {
         /// <summary>
         /// Required designer variable.

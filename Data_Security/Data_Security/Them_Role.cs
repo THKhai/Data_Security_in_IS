@@ -52,6 +52,10 @@ namespace Data_Security
                     conn.Open();
                     if (!string.IsNullOrEmpty(textBox2.Text))
                     {
+                        string query = "alter session set \"_ORACLE_SCRIPT\" =true ";
+                        OracleCommand cmd = new OracleCommand(query,conn);
+                        cmd.ExecuteNonQuery();
+
                         string query_01 = "create role " + textBox2.Text;
                         OracleCommand comm_01 = new OracleCommand(query_01, conn);
                         comm_01.ExecuteNonQuery();

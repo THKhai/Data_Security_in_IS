@@ -115,3 +115,5 @@ C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debu
 C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.exe
 C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.pdb
 C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.ThuHoiQuyen.resources
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.CapQuyen.resources
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.ThuHoiQuyen.resources
