@@ -91,3 +91,11 @@ alter table PHANCONG add foreign key (MAHP,HK,NAM,MACT) references KHMO(MAHP,HK,
 -- DANG KY
 alter table DANGKY add foreign key (MASV) references SINHVIEN(MASV);
 alter table DANGKY add foreign key (MAGV,MAHP,HK,NAM,MACT) references PHANCONG(MAGV,MAHP,HK,NAM,MACT);
+
+----------------------------------------import data---------------------------------------------
+-- load data 
+-- infile '<DONVI.csv>'
+-- into table DONVI fields terminated by "," optionally enclosed by '"' (MADV,TENDV,TRGDV)
+
+-- sqlldr sys/091202 CONTROL=<path_to_vertex_loader.ctl>
+
