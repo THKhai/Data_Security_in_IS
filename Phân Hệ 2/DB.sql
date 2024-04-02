@@ -12,7 +12,7 @@ create table NHANSU(
     PHAI char(5) check (PHAI = 'Nam' or PHAI = 'Nữ'),
     NGSINH DATE,
     PHUCAP INT, 
-    DT char(11),
+    DT char(13),
     VAITRO varchar(50),
     MADV char(10) -- khoa ngoai toi DONVI
 );
