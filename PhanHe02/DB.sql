@@ -12451,3 +12451,31 @@ update DONVI set TRGDV = 'NS04000003' where MADV = 'DV0004';
 update DONVI set TRGDV = 'NS04000004' where MADV = 'DV0005';
 update DONVI set TRGDV = 'NS04000005' where MADV = 'DV0006';
 update DONVI set TRGDV = 'NS04000006' where MADV = 'DV0007';
+
+---------------------------------------------- create user----------------------------
+CREATE OR REPLACE PROCEDURE USP_CREATEUSER_NS
+AS
+    CURSOR CUR IS (SELECT ns.manv
+                    FROM nhansu ns
+                    WHERE ns.manv NOT IN (SELECT USERNAME
+                                            FROM ALL_USERS)
+                );
+    STRSQL VARCHAR(2000);
+    USR VARCHAR2(10);
+BEGIN
+    OPEN CUR;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE' ;
+        EXECUTE IMMEDIATE(STRSQL);
+    LOOP
+        FETCH CUR INTO USR;
+        EXIT WHEN CUR%NOTFOUND;
+        STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR;
+        EXECUTE IMMEDIATE(STRSQL);
+        STRSQL := 'GRANT CONNECT TO '||USR;
+        EXECUTE IMMEDIATE(STRSQL);
+    END LOOP;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
+        EXECUTE IMMEDIATE(STRSQL);
+    CLOSE CUR;
+END;
+/
