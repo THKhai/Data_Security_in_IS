@@ -120,7 +120,7 @@ VALUES ('DV0007', 'MMT v¨¤ Vi?n Th?ng', NULL);
 --NHANSU
 
 INSERT INTO NHANSU  
-VALUES ('0100000001', 'Tara Walia', 'Nam', to_date('1965-06-28', 'YYYY-MM-DD'), 386000, '+914876475938', 'Nh?n vi¨ºn c? b?n', 'DV0006');
+VALUES ('NS01000001', 'Tara Walia', 'Nam', to_date('1965-06-28', 'YYYY-MM-DD'), 386000, '+914876475938', 'Nh?n vi¨ºn c? b?n', 'DV0006');
 
 INSERT INTO NHANSU  
 VALUES ('NS01000002', 'Raunak Boase', 'Nam', to_date('2011-02-12', 'YYYY-MM-DD'), 238000, '+919489241157', 'Nh?n vi¨ºn c? b?n', 'DV0004');
