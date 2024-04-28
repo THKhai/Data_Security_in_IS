@@ -25,7 +25,7 @@ namespace Data_Security
             string viewname = "V_" + tendoituong + tenbang;
             query = String.Format("create or replace view {0} \r\nas\r\n    select {1} from sys.{2}", viewname,caccotbihanche,tenbang);
             //query = "create or replace view V_DEMO \r\nas\r\n    select DIACHI from sys.BH_KHACHHANG";
-            query2 = String.Format("GRANT SELECT ON {0} to {1}", tenbang, tendoituong);
+            query2 = String.Format("GRANT SELECT ON {0} to {1}", viewname, tendoituong);
             try
             {
              
