@@ -1,12 +1,38 @@
 -- 
-drop table DANGKY;
-drop table PHANCONG;
-drop table KHMO;
-drop table HOCPHAN;
-drop table NHANSU;
-drop table DONVI;
-drop table SINHVIEN;
+-- adminlc
+declare
+    STRSQL varchar(2000);
+    user_count numeric;
+begin
+    select count(*) into user_count from ALL_USERS where USERNAME = 'ADMINLC';
+    if user_count = 1 then
+        STRSQL := 'alter session set "_ORACLE_SCRIPT" =true';
+        execute  immediate (STRSQL);
+        STRSQL := 'drop user ADMINLC CASCADE';
+        execute immediate (STRSQL);
+        STRSQL := 'alter session set "_ORACLE_SCRIPT" =false';
+        execute  immediate (STRSQL);
+    end if;
+end;
+/
 
+alter session set "_ORACLE_SCRIPT" =true;
+create user ADMINLC identified by ADMINLC;
+grant all privileges to ADMINLC;
+grant connect to ADMINLC;
+/
+-- connect ADMINLC
+connect ADMINLC/ADMINLC;
+/
+--
+drop table ADMINLC.DANGKY;
+drop table ADMINLC.PHANCONG;
+drop table ADMINLC.KHMO;
+drop table ADMINLC.HOCPHAN;
+drop table ADMINLC.NHANSU;
+drop table ADMINLC.DONVI;
+drop table ADMINLC.SINHVIEN;
+/
 create table NHANSU(
     MANV char(10) primary key,
     HOTEN varchar(60),
@@ -12456,7 +12482,7 @@ update DONVI set TRGDV = 'NS04000006' where MADV = 'DV0007';
 CREATE OR REPLACE PROCEDURE USP_CREATEUSER_NS
 AS
     CURSOR CUR IS (SELECT ns.manv
-                    FROM nhansu ns
+                    FROM ADMINLC.nhansu ns
                     WHERE ns.manv NOT IN (SELECT USERNAME
                                             FROM ALL_USERS)
                 );
@@ -12470,12 +12496,39 @@ BEGIN
         FETCH CUR INTO USR;
         EXIT WHEN CUR%NOTFOUND;
         STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR;
-        EXECUTE IMMEDIATE(STRSQL);
+        EXECUTE IMMEDIATE (STRSQL);
         STRSQL := 'GRANT CONNECT TO '||USR;
-        EXECUTE IMMEDIATE(STRSQL);
+        EXECUTE IMMEDIATE (STRSQL);
     END LOOP;
         STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
         EXECUTE IMMEDIATE(STRSQL);
     CLOSE CUR;
 END;
 /
+CREATE OR REPLACE PROCEDURE USP_DROPUSER_NS
+AS
+    CURSOR CUR IS (SELECT ns.manv
+                    FROM ADMINLC.nhansu ns
+                    WHERE ns.manv IN (SELECT USERNAME
+                                        FROM ALL_USERS)
+                );
+    STRSQL VARCHAR(2000);
+    USR VARCHAR2(10);
+BEGIN
+    OPEN CUR;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE' ;
+        EXECUTE IMMEDIATE(STRSQL);
+    LOOP
+        FETCH CUR INTO USR;
+        EXIT WHEN CUR%NOTFOUND;
+        STRSQL := 'DROP USER  '||USR;
+        EXECUTE IMMEDIATE (STRSQL);
+    END LOOP;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
+        EXECUTE IMMEDIATE(STRSQL);
+    CLOSE CUR;
+END;
+/
+exec USP_DROPUSER_NS;
+/
+exec USP_CREATEUSER_NS;
