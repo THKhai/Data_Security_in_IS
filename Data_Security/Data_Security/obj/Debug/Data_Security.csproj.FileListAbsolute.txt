@@ -121,3 +121,4 @@ F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.
 =======
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\Debug\Data_Security.Home.resources
 >>>>>>> f03a27cf396ba0a12ade5cdf9bd9e5197a66f89c
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Home.resources
