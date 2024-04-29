@@ -12532,3 +12532,5 @@ END;
 exec USP_DROPUSER_NS;
 /
 exec USP_CREATEUSER_NS;
+
+-----------------------------------------Oracle label security---------------------
