@@ -83,25 +83,19 @@ connect ADMINLC/ADMINLC;
 CREATE OR REPLACE FUNCTION DK_policy_function (p_schema VARCHAR2, p_obj VARCHAR2)
 RETURN VARCHAR2
 AS
-<<<<<<< HEAD
 user_role VARCHAR2(30);
-BEGIN
-    user_role := SYS_CONTEXT('USERENV', 'SESSION_USER');
-    if (user_role like 'SV%') THEN
-        RETURN 'MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') AND NAM = TO_CHAR(SYSDATE, ''YYYY'')';
-    ELSE
-        RETURN '1=1';
-    END IF;
-=======
     Nam2 varchar2(50);
 BEGIN
     select TO_CHAR(SYSDATE, 'YYYY') into Nam2 from DUAL;
-    RETURN 'MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') AND NAM =' ||Nam2;
->>>>>>> 528bcf1c0c85098e602c53905e2c333d078453d9
+    user_role := SYS_CONTEXT('USERENV', 'SESSION_USER');
+    if (user_role like 'SV%') THEN
+        RETURN 'MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') AND NAM =' ||Nam2;
+    ELSE
+        RETURN '1=1';
+    END IF;
 END;
 --SELECT TO_CHAR(SYSDATE, 'YYYY') FROM DUAL;
---4.
-
+--
 
 --DROP POLICY
 --1.
@@ -264,10 +258,11 @@ CONNECT SV21000001/123;
 SHOW USER
 select * from donvi;
 --TEST 1.1
-CONNECT SYS/258789258789 as sysdba;
 grant all on adminlc.SINHVIEN to ADMINLC;
+
+CONNECT SV21000001/123;
 SELECT *
-FROM ADMINLC.NHANSU;
+FROM ADMINLC.SINHVIEN;
 
 --TEST 1.2
 GRANT UPDATE ON ADMINLC.SINHVIEN TO SV21000001;
