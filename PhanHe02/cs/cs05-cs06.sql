@@ -64,24 +64,43 @@ connect ADMINLC/ADMINLC;
 Create OR REPLACE function SV_policiy_function(p_schema varchar2, p_obj varchar2)
 Return varchar2
 As
+user_role VARCHAR2(30);
 Begin
-    return 'MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
+    user_role := SYS_CONTEXT('USERENV', 'SESSION_USER');
+    if (user_role like 'SV%') THEN
+        return 'MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
+    ELSE
+        RETURN '1=1';
+    END IF;
 End;
+/
 --2.
 connect ADMINLC/ADMINLC;
 CREATE OR REPLACE FUNCTION HP_KHMO_policy_function (p_schema VARCHAR2, p_obj VARCHAR2)
 RETURN VARCHAR2
 AS
+user_role VARCHAR2(30);
 BEGIN
-    RETURN 'MACT = (SELECT MACT FROM ADMINLC.SINHVIEN WHERE MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
+    user_role := SYS_CONTEXT('USERENV', 'SESSION_USER');
+    if (user_role like 'SV%') THEN
+        RETURN 'MACT = (SELECT MACT FROM ADMINLC.SINHVIEN WHERE MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
+    ELSE
+        RETURN '1=1';
+    END IF;
 END;
 --3.
 connect ADMINLC/ADMINLC;
 CREATE OR REPLACE FUNCTION DK_policy_function (p_schema VARCHAR2, p_obj VARCHAR2)
 RETURN VARCHAR2
 AS
+user_role VARCHAR2(30);
 BEGIN
-    RETURN 'MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') AND NAM = TO_CHAR(SYSDATE, ''YYYY'')';
+    user_role := SYS_CONTEXT('USERENV', 'SESSION_USER');
+    if (user_role like 'SV%') THEN
+        RETURN 'MASV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') AND NAM = TO_CHAR(SYSDATE, ''YYYY'')';
+    ELSE
+        RETURN '1=1';
+    END IF;
 END;
 --SELECT TO_CHAR(SYSDATE, 'YYYY') FROM DUAL;
 --4.
