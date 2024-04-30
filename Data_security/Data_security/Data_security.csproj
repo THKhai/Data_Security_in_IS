@@ -94,6 +94,18 @@
     <Compile Include="ChinhSua_User.Designer.cs">
       <DependentUpon>ChinhSua_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="GIANGVIEN\GIANGVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIANGVIEN\GIANGVIEN.Designer.cs">
+      <DependentUpon>GIANGVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GIAOVU\GIAOVU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIAOVU\GIAOVU.Designer.cs">
+      <DependentUpon>GIAOVU.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     <Compile Include="CapQuyen.Designer.cs">
       <DependentUpon>CapQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="NHANVIENCOBAN]\NHANVIENCB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NHANVIENCOBAN]\NHANVIENCB.Designer.cs">
+      <DependentUpon>NHANVIENCB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Privilege.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +132,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SINHVIEN\SINHVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SINHVIEN\SINHVIEN.Designer.cs">
+      <DependentUpon>SINHVIEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuccessLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +161,18 @@
     </Compile>
     <Compile Include="ThuHoiQuyen.Designer.cs">
       <DependentUpon>ThuHoiQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGDONVI\TRUONGDONVI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGDONVI\TRUONGDONVI.Designer.cs">
+      <DependentUpon>TRUONGDONVI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGKHOA\TRUONGKHOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGKHOA\TRUONGKHOA.Designer.cs">
+      <DependentUpon>TRUONGKHOA.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CapQuyen.resx">
       <DependentUpon>CapQuyen.cs</DependentUpon>

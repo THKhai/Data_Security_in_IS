@@ -44,7 +44,7 @@ namespace Data_Security
         {
             try
             {
-                SERVICE_NAME = "XE";
+                SERVICE_NAME = "XEPDB1";
                 id = textBox1.Text;
                 password = textBox2.Text;
                 if (id.ToLower() == "sys")

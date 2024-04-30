@@ -19,6 +19,7 @@ end;
 alter session set "_ORACLE_SCRIPT" =true;
 create user ADMINLC identified by ADMINLC;
 grant all privileges to ADMINLC;
+grant execute on dbms_rls to ADMINLC;
 grant connect to ADMINLC;
 /
 -- connect ADMINLC
@@ -12495,7 +12496,7 @@ BEGIN
     LOOP
         FETCH CUR INTO USR;
         EXIT WHEN CUR%NOTFOUND;
-        STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR;
+        STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR|| ' container = all';
         EXECUTE IMMEDIATE (STRSQL);
         STRSQL := 'GRANT CONNECT TO '||USR;
         EXECUTE IMMEDIATE (STRSQL);
@@ -12505,6 +12506,7 @@ BEGIN
     CLOSE CUR;
 END;
 /
+
 CREATE OR REPLACE PROCEDURE USP_DROPUSER_NS
 AS
     CURSOR CUR IS (SELECT ns.manv
@@ -12521,16 +12523,14 @@ BEGIN
     LOOP
         FETCH CUR INTO USR;
         EXIT WHEN CUR%NOTFOUND;
-        STRSQL := 'DROP USER  '||USR;
-        EXECUTE IMMEDIATE (STRSQL);
+        STRSQL := 'DROP USER '||USR;
+        EXECUTE IMMEDIATE STRSQL;
     END LOOP;
         STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
-        EXECUTE IMMEDIATE(STRSQL);
+        EXECUTE IMMEDIATE STRSQL;
     CLOSE CUR;
 END;
 /
 exec USP_DROPUSER_NS;
 /
 exec USP_CREATEUSER_NS;
-
------------------------------------------Oracle label security---------------------
