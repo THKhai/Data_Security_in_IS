@@ -94,6 +94,12 @@
     <Compile Include="ChinhSua_User.Designer.cs">
       <DependentUpon>ChinhSua_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Audit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audit.Designer.cs">
+      <DependentUpon>Audit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     <Compile Include="ThuHoiQuyen.Designer.cs">
       <DependentUpon>ThuHoiQuyen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Audit.resx">
+      <DependentUpon>Audit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapQuyen.resx">
       <DependentUpon>CapQuyen.cs</DependentUpon>
     </EmbeddedResource>

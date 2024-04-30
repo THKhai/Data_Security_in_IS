@@ -55,5 +55,11 @@ namespace Data_Security
                 pr.ShowDialog();
                 this.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           Audit au = new Audit(connectString);
+            au.ShowDialog();
+        }
     }
 }
