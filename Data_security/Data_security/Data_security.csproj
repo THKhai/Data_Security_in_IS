@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audit.Designer.cs">
+      <DependentUpon>Audit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChinhSua_Role.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     <Compile Include="TRUONGKHOA\TRUONGKHOA.Designer.cs">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Audit.resx">
+      <DependentUpon>Audit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapQuyen.resx">
       <DependentUpon>CapQuyen.cs</DependentUpon>
     </EmbeddedResource>
