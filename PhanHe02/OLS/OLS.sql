@@ -32,9 +32,9 @@ connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY;
 ----------------------------------------------------------
 --select* from all_SA_LABELS;
 ----/
---begin
---    SA_SYSDBA.DROP_POLICY( policy_name => 'Notification_Policy');
---end;
+begin
+    SA_SYSDBA.DROP_POLICY( policy_name => 'Notification_Policy');
+end;
 /
 --select* from all_SA_LABELS;
 ------------------------------------------------------------
@@ -202,7 +202,8 @@ BEGIN
 END;
 /
 EXEC SET_LABELS_TK;
-
+CONNECT NS04000001/NS04000001;
+select* from ADMIN_OLS.THONGBAO;
 -- cau b
 create or replace procedure SET_LABELS_TBM as
     CURSOR CUR IS (SELECT MANV FROM ADMINLC.NHANSU WHERE MANV LIKE 'NS04%');
@@ -217,7 +218,6 @@ BEGIN
         -- C?p quy?n SELECT cho ng??i d¨´ng
         STRSQL := 'GRANT SELECT ON ADMIN_OLS.THONGBAO TO ' || USER_NAME;
         EXECUTE IMMEDIATE STRSQL;
-        
         -- Thi?t l?p nh?n cho ng??i d¨´ng
         SA_USER_ADMIN.SET_USER_LABELS(
             policy_name => 'Notification_Policy',
@@ -275,8 +275,8 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
---cau e
 EXEC SET_T1_TDV('TB00000001');
+--cau e
 create or replace procedure SET_T2_SV(MA in varchar2) as
     STRSQL VARCHAR2(200);
 BEGIN
@@ -284,6 +284,7 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
+EXEC SET_T2_SV('TB00000002');
 --cau f
 create or replace procedure SET_T3_TBM_CS1(MA in varchar2) as
     STRSQL VARCHAR2(200);
@@ -293,6 +294,7 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
+EXEC SET_T3_TBM_CS1('TB00000003')
 --cau g
 create or replace procedure SET_T4_TBM_CS12(MA in varchar2) as
     STRSQL VARCHAR2(200);
@@ -302,6 +304,7 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
+EXEC SET_T3_TBM_CS1('TB00000004')
 
 --h.
 --CS1: Giao vien duoc xem cac thong bao lien quan den giao vien, khong phan biet co so
