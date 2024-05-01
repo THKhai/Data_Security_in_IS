@@ -134,7 +134,7 @@ namespace Data_Security.TRUONGKHOA
                     }
                     if (tablename == "SINHVIEN")
                     {
-                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " = " + textBox8.ToString() + " WHERE MASV = '"
+                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " WHERE MASV = '"
                             + textBox1.Text.ToString() + "'";
                     }
                     if (tablename == "DONVI")
@@ -144,12 +144,12 @@ namespace Data_Security.TRUONGKHOA
                     }
                     if (tablename == "HOCPHAN")
                     {
-                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " = " + textBox8.ToString() + " WHERE MAHP = '"
+                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " WHERE MAHP = '"
                             + textBox1.Text.ToString() + "'";
                     }
                     if (tablename == "KHMO")
                     {
-                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " = " + textBox8.ToString() + " WHERE MAHP = '"
+                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " WHERE MAHP = '"
                             + textBox1.Text.ToString() + "' AND HK = "
                             + textBox2.Text.ToString() + " AND NAM = "
                             + textBox2.Text.ToString() + " AND MACT = '"
@@ -157,7 +157,7 @@ namespace Data_Security.TRUONGKHOA
                     }
                     if (tablename == "PHANCONG")
                     {
-                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " = " + textBox8.ToString() + " WHERE MAGV = '"
+                        query = "UPDATE ADMINLC.v_TruongKhoa SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " WHERE MAGV = '"
                             + textBox1.Text.ToString() + "' AND MAHP = '"
                             + textBox2.Text.ToString() + "' AND HK = "
                             + textBox3.Text.ToString() + " AND NAM = "
@@ -166,7 +166,7 @@ namespace Data_Security.TRUONGKHOA
                     }
                     if (tablename == "DANGKY")
                     {
-                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " = " + textBox8.ToString() + " WHERE MASV = '"
+                        query = "UPDATE ADMINLC." + tablename + " SET " + textBox7.Text.ToString() + " = " + textBox8.Text.ToString() + " WHERE MASV = '"
                             + textBox1.Text.ToString() + "' AND MAGP = '"
                             + textBox2.Text.ToString() + "' AND MAHP = '"
                             + textBox3.Text.ToString() + "' AND HK = "
