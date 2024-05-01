@@ -66,7 +66,7 @@ End;
 /
 --2.
 connect ADMINLC/ADMINLC;
-
+Create OR REPLACE function HP_KHMO_policy_function2(p_schema varchar2, p_obj varchar2)
 RETURN VARCHAR2
 AS
 user_role VARCHAR2(30);
@@ -175,7 +175,7 @@ BEGIN
         object_name      => 'HOCPHAN', 
         policy_name      => 'HP_KHMO_policy1', 
         function_schema  => 'ADMINLC', 
-        policy_function  => 'HP_KHMO_policy_function2',
+        policy_function  => 'HP_KHMO_policy_function',
         statement_types  => 'SELECT',
         enable => TRUE
     );
@@ -279,7 +279,9 @@ GRANT CONNECT TO SV2100000A;
 GRANT SELECT ON ADMINLC.DANGKY TO SV2100000A;
 CONNECT SV21000001/123;
 SELECT *
-FROM ADMINLC.HOCPHAN
+FROM ADMINLC.SINHVIEN
 SELECT *
 FROM ADMIN_OLS.THONGBAO
 GRANT TruongKhoa TO NS05000001;
+
+select value from v$parameter where name like '%service_name%';
