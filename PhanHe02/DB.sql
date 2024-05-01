@@ -1,4 +1,14 @@
--- 
+EXEC LBACSYS.CONFIGURE_OLS;
+EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS;
+--SELECT VALUE FROM v$option WHERE parameter = 'Oracle Label Security';
+--SELECT status FROM dba_ols_status WHERE name = 'OLS_CONFIGURE_STATUS';
+--SHUTDOWN IMMEDIATE;
+--STARTUP;
+/
+ALTER USER lbacsys IDENTIFIED BY lbacsys ACCOUNT LOCK CONTAINER=ALL ;
+ALTER PLUGGABLE DATABASE DBA_SECURITY  OPEN READ WRITE;
+ALTER SESSION SET CONTAINER= DBA_SECURITY;
+SHOW CON_NAME;
 -- adminlc
 declare
     STRSQL varchar(2000);
@@ -21,6 +31,9 @@ create user ADMINLC identified by ADMINLC container = ALL;
 grant all privileges to ADMINLC;
 grant execute on dbms_rls to ADMINLC;
 grant connect to ADMINLC;
+GRANT CONNECT,RESOURCE TO ADMINLC; --C?P QUY?N CONNECT V? RESOURCE
+GRANT UNLIMITED TABLESPACE TO ADMINLC; --C?P QUOTA CHO ADMIN_OLS
+GRANT SELECT ANY DICTIONARY TO ADMINLC;
 /
 -- connect ADMINLC
 connect ADMINLC/ADMINLC;
@@ -34,6 +47,8 @@ drop table ADMINLC.NHANSU;
 drop table ADMINLC.DONVI;
 drop table ADMINLC.SINHVIEN;
 /
+
+connect ADMINLC/ADMINLC;
 create table NHANSU(
     MANV char(10) primary key,
     HOTEN varchar(60),
@@ -120,9 +135,10 @@ alter table PHANCONG add  foreign key (MAHP,HK,NAM,MACT) references KHMO(MAHP,HK
 -- DANG KY
 alter table DANGKY add foreign key (MASV) references SINHVIEN(MASV);
 alter table DANGKY add  foreign key (MAGV,MAHP,HK,NAM,MACT) references PHANCONG(MAGV,MAHP,HK,NAM,MACT);
-
+/
 ----------------------------------------import data---------------------------------------------
 -- DONVI
+connect ADMINLC/ADMINLC;
 INSERT INTO DONVI (MADV, TENDV, TRGDV) 
 VALUES ('DV0001', 'V?n ph¨°ng khoa', NULL);
 
@@ -12470,6 +12486,18 @@ VALUES ('SV21003999', 'Priyansh Banerjee', 'Nam', to_date('1918-01-29', 'YYYY-MM
 INSERT INTO SINHVIEN
 VALUES ('SV21004000', 'Biju Bava', 'Nam', to_date('1938-12-12', 'YYYY-MM-DD'), 'H.No. 952 Saxena Ganj Avadi', '2855749365', 'CLC', 'CNPM', 119, 5.44);
 
+insert into KHMO values ('HP02000001',2,2024,'CLC');
+/
+insert into ADMINLC.PHANCONG values ('NS02000001','HP02000001',2,2024,'CLC');
+/
+insert into DANGKY values ('SV21000001','NS02000001','HP02000001',2,2024,'CLC',0,0,0,0);
+/
+insert into PHANCONG values ('NS02000002','HP02000001',2,2024,'CLC');
+/
+insert into DANGKY values ('SV21000002','NS02000002','HP02000001',2,2024,'CLC',0,0,0,0);
+/
+insert into HOCPHAN values ('HP02000001','An to??n b?o m?t',4,10,10,10,'DV0002');
+/
 -- update TRGDV to DONVI
 update DONVI set TRGDV = 'NS05000001' where MADV = 'DV0001';
 update DONVI set TRGDV = 'NS04000001' where MADV = 'DV0002';
@@ -12519,11 +12547,63 @@ AS
 BEGIN
     OPEN CUR;
         STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE' ;
+        EXECUTE IMMEDIATE STRSQL;
+    LOOP
+        FETCH CUR INTO USR;
+        EXIT WHEN CUR%NOTFOUND;
+        STRSQL := 'DROP USER '||USR || 'cascade';
+        EXECUTE IMMEDIATE STRSQL;
+    END LOOP;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
+        EXECUTE IMMEDIATE STRSQL;
+    CLOSE CUR;
+END;
+/
+CREATE OR REPLACE PROCEDURE USP_CREATEUSER_SV
+AS
+    CURSOR CUR IS (SELECT SV.MASV
+                    FROM ADMINLC.SINHVIEN SV
+                    WHERE SV.MASV NOT IN (SELECT USERNAME
+                                            FROM ALL_USERS)
+                );
+    STRSQL VARCHAR(2000);
+    USR VARCHAR2(10);
+BEGIN
+    OPEN CUR;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE' ;
         EXECUTE IMMEDIATE(STRSQL);
     LOOP
         FETCH CUR INTO USR;
         EXIT WHEN CUR%NOTFOUND;
-        STRSQL := 'DROP USER '||USR|| ' cASCADE';
+        STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR;
+        EXECUTE IMMEDIATE (STRSQL);
+        STRSQL := 'GRANT CONNECT TO '||USR;
+        EXECUTE IMMEDIATE (STRSQL);
+        STRSQL := 'GRANT SinhVien TO '||USR;
+        EXECUTE IMMEDIATE (STRSQL);
+    END LOOP;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
+        EXECUTE IMMEDIATE(STRSQL);
+    CLOSE CUR;
+END;
+/
+CREATE OR REPLACE PROCEDURE USP_DROPUSER_SV
+AS
+    CURSOR CUR IS (SELECT SV.MASV
+                    FROM ADMINLC.SINHVIEN SV
+                    WHERE SV.MASV IN (SELECT USERNAME
+                                        FROM ALL_USERS)
+                );
+    STRSQL VARCHAR(2000);
+    USR VARCHAR2(10);
+BEGIN
+    OPEN CUR;
+        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE' ;
+        EXECUTE IMMEDIATE STRSQL;
+    LOOP
+        FETCH CUR INTO USR;
+        EXIT WHEN CUR%NOTFOUND;
+        STRSQL := 'DROP USER '||USR || 'cascade';
         EXECUTE IMMEDIATE STRSQL;
     END LOOP;
         STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
@@ -12532,5 +12612,7 @@ BEGIN
 END;
 /
 exec USP_DROPUSER_NS;
+exec USP_DROPUSER_SV;
 /
 exec USP_CREATEUSER_NS;
+exec USP_CREATEUSER_SV
