@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< Updated upstream
+
             this.SuspendLayout();
             // 
             // TRUONGKHOA
@@ -39,7 +39,7 @@
             this.Name = "TRUONGKHOA";
             this.Text = "TRUONGKHOA";
             this.Load += new System.EventHandler(this.TRUONGKHOA_Load);
-=======
+
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.Controls.Add(this.button1);
             this.Name = "TRUONGKHOA";
             this.Text = "TRUONGKHOA";
->>>>>>> Stashed changes
+
             this.ResumeLayout(false);
 
         }

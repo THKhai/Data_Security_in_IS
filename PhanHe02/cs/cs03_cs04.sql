@@ -15,7 +15,7 @@ as
     select pc.magv,pc.mahp,pc.hk,pc.nam,pc.mact from ADMINLC.phancong pc,ADMINLC.nhansu ns where pc.magv = ns.manv and ns.madv = 'DV0001';
 /
 
-grant update on V_GiaoVu_PhanCong to R_GiaoVu;
+grant select ,update on V_GiaoVu_PhanCong to R_GiaoVu;
 grant insert,delete on ADMINLC.DANGKY to R_GiaoVu;
 
 CREATE OR REPLACE PROCEDURE GRANT_ROLE_GIAOVU AS
@@ -55,7 +55,7 @@ as
     select pc.magv,pc.mahp,pc.hk,pc.nam,pc.mact from ADMINLC.phancong pc,ADMINLC.nhansu ns,ADMINLC.donvi dv where pc.magv = ns.manv and ns.madv = dv.madv and dv.trgdv = sys_context('USERENV', 'SESSION_USER');
 
 /
-grant insert,delete,update on V_TRUONGDONVI_PhanCong to R_TRUONGDONVI;
+grant select,insert,delete,update on V_TRUONGDONVI_PhanCong to R_TRUONGDONVI;
 grant select on V_TRUONGDONVI_PhanCong_xem to R_TRUONGDONVI;
 
 CREATE OR REPLACE PROCEDURE GRANT_ROLE_TRUONGDONVI AS

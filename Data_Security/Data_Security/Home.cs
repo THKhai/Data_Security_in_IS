@@ -60,7 +60,7 @@ namespace Data_Security
                 else
                 {
                     //connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password + ";";
-                    MessageBox.Show("Chỉ quản trị viên mới được đăng nhập ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thao tác thất bại");
                 }
                 //connectString = "Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = khainehaha)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = XE)));User Id = " + id + ";password =" + password + ";";
                 
@@ -115,7 +115,7 @@ namespace Data_Security
                             sv.ShowDialog();
                             this.Show();
                         }
-                        else if (id.StartsWith("ADMINLC"))
+                        else 
                         {
                             SuccessLogin successLogin = new SuccessLogin(connectString);
                             successLogin.ShowDialog();
