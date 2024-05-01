@@ -52,7 +52,7 @@ namespace Data_Security
                 {
                     connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password + ";DBA Privilege = SYSDBA;";
                 }
-                else if (id.StartsWith("NS05") || id.StartsWith("NS04") || id.StartsWith("NS03") || id.StartsWith("NS02") || id.StartsWith("NS01") || id.StartsWith("SV21"))
+                else if (id.StartsWith("NS05") || id.StartsWith("NS04") || id.StartsWith("NS03") || id.StartsWith("NS02") || id.StartsWith("NS01") || id.StartsWith("SV21") ||  id.StartsWith("ADMINLC"))
                 {
                     connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password ;
                 }
@@ -113,6 +113,12 @@ namespace Data_Security
                         {
                             Data_Security.SINHVIEN.SINHVIEN sv = new SINHVIEN.SINHVIEN(connectString);
                             sv.ShowDialog();
+                            this.Show();
+                        }
+                        else if (id.StartsWith("ADMINLC"))
+                        {
+                            SuccessLogin successLogin = new SuccessLogin(connectString);
+                            successLogin.ShowDialog();
                             this.Show();
                         }
                     }
