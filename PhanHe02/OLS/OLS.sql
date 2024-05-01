@@ -315,7 +315,90 @@ END;
 
 --h.
 --CS1: Giao vien duoc xem cac thong bao lien quan den giao vien, khong phan biet co so
-
+create or replace procedure SET_LABELS_SV as
+    CURSOR CUR IS (SELECT MASV FROM ADMINLC.SINHVIEN);
+    STRSQL VARCHAR2(2000);
+    USER_NAME VARCHAR2(10);    
+BEGIN
+    OPEN CUR;
+    LOOP
+        FETCH CUR INTO USER_NAME;
+        EXIT WHEN CUR%NOTFOUND;
+        
+        -- C?p quy?n SELECT cho ng??i d¨´ng
+        STRSQL := 'GRANT SELECT ON ADMIN_OLS.THONGBAO TO ' || USER_NAME;
+        EXECUTE IMMEDIATE STRSQL;
+        
+        -- Thi?t l?p nh?n cho ng??i d¨´ng
+        SA_USER_ADMIN.SET_USER_LABELS(
+            policy_name => 'Notification_Policy',
+            user_name => USER_NAME,
+            max_read_label => 'SV:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+--            max_write_label => 'GVU',
+--            min_write_label => 'GVU',
+--            def_label       => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2',
+--            row_label       => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+        );
+    END LOOP;
+    CLOSE CUR;
+end;
+/
 --CS2: Nhan vien o CS1 chi do duoc thong bao o CS1
 
+create or replace procedure SET_LABELS_NVCS1 as
+    CURSOR CUR IS (SELECT MANV FROM ADMINLC.NHANSU WHERE MANV LIKE 'NS01%');
+    STRSQL VARCHAR2(2000);
+    USER_NAME VARCHAR2(10);    
+BEGIN
+    OPEN CUR;
+    LOOP
+        FETCH CUR INTO USER_NAME;
+        EXIT WHEN CUR%NOTFOUND;
+        
+        -- C?p quy?n SELECT cho ng??i d¨´ng
+        STRSQL := 'GRANT SELECT ON ADMIN_OLS.THONGBAO TO ' || USER_NAME;
+        EXECUTE IMMEDIATE STRSQL;
+        
+        -- Thi?t l?p nh?n cho ng??i d¨´ng
+        SA_USER_ADMIN.SET_USER_LABELS(
+            policy_name => 'Notification_Policy',
+            user_name => USER_NAME,
+            max_read_label => 'NV:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1'
+--            max_write_label => 'GVU',
+--            min_write_label => 'GVU',
+--            def_label       => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2',
+--            row_label       => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+        );
+    END LOOP;
+    CLOSE CUR;
+end;
+/
 --CS3: Giao vu d??c xem thong bao cua Giao vien va Sinh vien
+create or replace procedure SET_LABELS_GVU2 as
+    CURSOR CUR IS (SELECT MANV FROM ADMINLC.NHANSU WHERE MANV LIKE 'NS03%');
+    STRSQL VARCHAR2(2000);
+    USER_NAME VARCHAR2(10);    
+BEGIN
+    OPEN CUR;
+    LOOP
+        FETCH CUR INTO USER_NAME;
+        EXIT WHEN CUR%NOTFOUND;
+        
+        -- C?p quy?n SELECT cho ng??i d¨´ng
+        STRSQL := 'GRANT SELECT ON ADMIN_OLS.THONGBAO TO ' || USER_NAME;
+        EXECUTE IMMEDIATE STRSQL;
+        
+        -- Thi?t l?p nh?n cho ng??i d¨´ng
+        SA_USER_ADMIN.SET_USER_LABELS(
+            policy_name => 'Notification_Policy',
+            user_name => USER_NAME,
+            max_read_label => 'GVU,GV,SV:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+--            max_write_label => 'GVU',
+--            min_write_label => 'GVU',
+--            def_label       => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2',
+--            row_label       => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+        );
+    END LOOP;
+    CLOSE CUR;
+end;
+/
