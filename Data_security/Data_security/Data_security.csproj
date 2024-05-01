@@ -195,6 +195,9 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NHANVIENCOBAN]\NHANVIENCB.resx">
+      <DependentUpon>NHANVIENCB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Privilege.resx">
       <DependentUpon>Privilege.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThuHoiQuyen.resx">
       <DependentUpon>ThuHoiQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGKHOA\TRUONGKHOA.resx">
+      <DependentUpon>TRUONGKHOA.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

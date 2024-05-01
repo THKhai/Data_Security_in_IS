@@ -16,5 +16,10 @@ namespace Data_Security.NHANVIENCOBAN_
         {
             InitializeComponent();
         }
+
+        private void NHANVIENCB_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

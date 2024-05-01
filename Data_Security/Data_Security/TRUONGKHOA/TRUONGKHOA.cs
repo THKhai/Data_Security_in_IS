@@ -16,5 +16,10 @@ namespace Data_Security.TRUONGKHOA
         {
             InitializeComponent();
         }
+
+        private void TRUONGKHOA_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

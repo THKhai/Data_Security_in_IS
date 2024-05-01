@@ -124,3 +124,5 @@ D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_security\Data_Security\obj\
 C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Home.resources
 F:\KHTN\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Audit.resources
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Audit.resources
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.NHANVIENCOBAN_.NHANVIENCB.resources
+D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGKHOA.TRUONGKHOA.resources

@@ -11,6 +11,7 @@ using Oracle.ManagedDataAccess.Client;
 using System.Configuration;
 using System.Xml.Linq;
 using System.Security.Cryptography;
+using Data_Security.TRUONGKHOA;
 //using Oracle.DataAccess.Client;
 namespace Data_Security
 {
@@ -44,13 +45,18 @@ namespace Data_Security
         {
             try
             {
-                SERVICE_NAME = "XEPDB1";
+                SERVICE_NAME = "XE";
                 id = textBox1.Text;
                 password = textBox2.Text;
-                if (id.ToLower() == "sys")
+                if (id.StartsWith("sys"))
                 {
                     connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password + ";DBA Privilege = SYSDBA;";
                 }
+                else if (id.StartsWith("NS05") || id.StartsWith("NS04") || id.StartsWith("NS03") || id.StartsWith("NS02") || id.StartsWith("NS01") || id.StartsWith("SV21"))
+                {
+                    connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password ;
+                }
+                
                 else
                 {
                     //connectString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + SERVICE_NAME + ")));User Id=" + id + ";Password=" + password + ";";
@@ -60,20 +66,55 @@ namespace Data_Security
                 
                 using (OracleConnection con = new OracleConnection(connectString))
                 {
+                    
                     con.Open();
                     if (con.State == ConnectionState.Open)
                     {
                         MessageBox.Show("Kết nối thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         con.Close();
                         this.Hide();
-                        SuccessLogin successLogin = new SuccessLogin(connectString);
-                        successLogin.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Kết nối không thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        if (id.StartsWith("sys"))
+                        {
+                            SuccessLogin successLogin = new SuccessLogin(connectString);
+                            successLogin.ShowDialog();
+                            this.Show();
+                        }
+                        else if (id.StartsWith("NS05"))
+                        {
+                            Data_Security.TRUONGKHOA.TRUONGKHOA tk = new TRUONGKHOA.TRUONGKHOA();
+                            tk.ShowDialog();
+                            this.Show();
+                        }
+                        else if (id.StartsWith("NS04"))
+                        {
+                            Data_Security.TRUONGDONVI.TRUONGDONVI tdv = new TRUONGDONVI.TRUONGDONVI();
+                            tdv.ShowDialog();
+                            this.Show();
+                        }
+                        else if (id.StartsWith("NS03"))
+                        {
+                            Data_Security.GIAOVU.GIAOVU gvu = new GIAOVU.GIAOVU();
+                            gvu.ShowDialog();
+                            this.Show();
+                        }
+                        else if (id.StartsWith("NS02"))
+                        {
+                            Data_Security.GIANGVIEN.GIANGVIEN gv = new GIANGVIEN.GIANGVIEN();
+                            gv.ShowDialog();
+                            this.Show();
+                        }
+                        else if (id.StartsWith("NS01"))
+                        {
+                            Data_Security.NHANVIENCOBAN_.NHANVIENCB nv = new NHANVIENCOBAN_.NHANVIENCB();
+                            nv.ShowDialog();
+                            this.Show();
+                        }
+                        else if (id.StartsWith("SV21"))
+                        {
+                            Data_Security.SINHVIEN.SINHVIEN sv = new SINHVIEN.SINHVIEN();
+                            sv.ShowDialog();
+                            this.Show();
+                        }
                     }
                 }
             }
