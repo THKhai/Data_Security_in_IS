@@ -1,9 +1,10 @@
 ---- create user
 ---- cs01
---
---
 connect ADMINLC/ADMINLC;
 --
+alter session set"_ORACLE_SCRIPT" = true;
+drop role R_NhanSu;
+
 create role R_NhanSu;
 create or replace view V_NhanSu
 as
@@ -81,21 +82,11 @@ begin
 end;
 /
 EXEC GRANT_ROLE_GV;
+--test
 
--- test
-insert into ADMINLC.KHMO values ('HP02000001',2,2024,'CLC');
-insert into ADMINLC.PHANCONG values ('NS02000001','HP02000001',2,2024,'CLC');
-insert into ADMINLC.DANGKY values ('SV21000001','NS02000001','HP02000001',2,2024,'CLC',0,0,0,0);
-insert into ADMINLC.PHANCONG values ('NS02000002','HP02000001',2,2024,'CLC');
-insert into ADMINLC.DANGKY values ('SV21000002','NS02000002','HP02000001',2,2024,'CLC',0,0,0,0);
-insert into ADMINLC.HOCPHAN values ('HP02000001','An to��n b?o m?t',4,10,10,10,'DV0002');
-
-connect NS02000001/NS02000001;
-select* from ADMINLC.V_NHANSU;
-select* from ADMINLC.V_PHANCONG_GV;
-select* from ADMINLC.V_DANGKY_GV;
-update ADMINLC.V_DANGKY_GV set DIEMTHI = 1, DIEMQT = 2, DIEMCK = 2, DIEMTK = 3 where MAHP = 'HP02000001';
-update ADMINLC.V_DANGKY_GV set DIEMTHI = 1, DIEMQT = 2, DIEMCK = 2, DIEMTK = 3 where MAHP = 'HP02000002';
-
-
-
+--connect NS02000001/NS02000001;
+--select* from ADMINLC.V_NHANSU;
+--select* from ADMINLC.V_PHANCONG_GV;
+--select* from ADMINLC.V_DANGKY_GV;
+--update ADMINLC.V_DANGKY_GV set DIEMTHI = 1, DIEMQT = 2, DIEMCK = 2, DIEMTK = 3 where MAHP = 'HP02000001';
+--update ADMINLC.V_DANGKY_GV set DIEMTHI = 1, DIEMQT = 2, DIEMCK = 2, DIEMTK = 3 where MAHP = 'HP02000002';

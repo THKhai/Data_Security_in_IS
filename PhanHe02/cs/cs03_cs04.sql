@@ -1,5 +1,4 @@
 connect ADMINLC/ADMINLC;
-
 --CS3
 alter session set"_ORACLE_SCRIPT" = true;
 create role R_GiaoVu;
