@@ -17,7 +17,7 @@ end;
 /
 
 alter session set "_ORACLE_SCRIPT" =true;
-create user ADMINLC identified by ADMINLC;
+create user ADMINLC identified by ADMINLC container = ALL;
 grant all privileges to ADMINLC;
 grant execute on dbms_rls to ADMINLC;
 grant connect to ADMINLC;
@@ -12496,7 +12496,7 @@ BEGIN
     LOOP
         FETCH CUR INTO USR;
         EXIT WHEN CUR%NOTFOUND;
-        STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR|| ' container = all';
+        STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR|| ' CONTAINER=ALL';
         EXECUTE IMMEDIATE (STRSQL);
         STRSQL := 'GRANT CONNECT TO '||USR;
         EXECUTE IMMEDIATE (STRSQL);
@@ -12523,7 +12523,7 @@ BEGIN
     LOOP
         FETCH CUR INTO USR;
         EXIT WHEN CUR%NOTFOUND;
-        STRSQL := 'DROP USER '||USR;
+        STRSQL := 'DROP USER '||USR|| ' cASCADE';
         EXECUTE IMMEDIATE STRSQL;
     END LOOP;
         STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
