@@ -12,7 +12,7 @@ namespace Data_Security.NHANVIENCOBAN_
 {
     public partial class NHANVIENCB : Form
     {
-        public NHANVIENCB()
+        public NHANVIENCB(string strconnect)
         {
             InitializeComponent();
         }

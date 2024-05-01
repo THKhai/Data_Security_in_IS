@@ -12,7 +12,7 @@ namespace Data_Security.TRUONGKHOA
 {
     public partial class TRUONGKHOA : Form
     {
-        public TRUONGKHOA()
+        public TRUONGKHOA(string strconnect)
         {
             InitializeComponent();
         }

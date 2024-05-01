@@ -12,9 +12,14 @@ namespace Data_Security.GIAOVU
 {
     public partial class GIAOVU : Form
     {
-        public GIAOVU()
+        public GIAOVU(string strconnect)
         {
             InitializeComponent();
+        }
+
+        private void GIAOVU_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

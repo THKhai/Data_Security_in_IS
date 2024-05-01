@@ -192,6 +192,12 @@
     <EmbeddedResource Include="ChinhSua_User.resx">
       <DependentUpon>ChinhSua_User.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GIANGVIEN\GIANGVIEN.resx">
+      <DependentUpon>GIANGVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GIAOVU\GIAOVU.resx">
+      <DependentUpon>GIAOVU.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +216,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SINHVIEN\SINHVIEN.resx">
+      <DependentUpon>SINHVIEN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuccessLogin.resx">
       <DependentUpon>SuccessLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThuHoiQuyen.resx">
       <DependentUpon>ThuHoiQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGDONVI\TRUONGDONVI.resx">
+      <DependentUpon>TRUONGDONVI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TRUONGKHOA\TRUONGKHOA.resx">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>

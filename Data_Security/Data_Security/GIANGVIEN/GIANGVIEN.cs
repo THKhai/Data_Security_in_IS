@@ -12,9 +12,14 @@ namespace Data_Security.GIANGVIEN
 {
     public partial class GIANGVIEN : Form
     {
-        public GIANGVIEN()
+        public GIANGVIEN(string strconnect)
         {
             InitializeComponent();
+        }
+
+        private void GIANGVIEN_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,9 +12,14 @@ namespace Data_Security.SINHVIEN
 {
     public partial class SINHVIEN : Form
     {
-        public SINHVIEN()
+        public SINHVIEN(string strconnect)
         {
             InitializeComponent();
+        }
+
+        private void SINHVIEN_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

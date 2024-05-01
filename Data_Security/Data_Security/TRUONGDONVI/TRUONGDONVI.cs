@@ -12,9 +12,14 @@ namespace Data_Security.TRUONGDONVI
 {
     public partial class TRUONGDONVI : Form
     {
-        public TRUONGDONVI()
+        public TRUONGDONVI(string strconnect)
         {
             InitializeComponent();
+        }
+
+        private void TRUONGDONVI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

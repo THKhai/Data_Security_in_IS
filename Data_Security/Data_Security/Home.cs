@@ -81,37 +81,37 @@ namespace Data_Security
                         }
                         else if (id.StartsWith("NS05"))
                         {
-                            Data_Security.TRUONGKHOA.TRUONGKHOA tk = new TRUONGKHOA.TRUONGKHOA();
+                            Data_Security.TRUONGKHOA.TRUONGKHOA tk = new TRUONGKHOA.TRUONGKHOA(connectString);
                             tk.ShowDialog();
                             this.Show();
                         }
                         else if (id.StartsWith("NS04"))
                         {
-                            Data_Security.TRUONGDONVI.TRUONGDONVI tdv = new TRUONGDONVI.TRUONGDONVI();
+                            Data_Security.TRUONGDONVI.TRUONGDONVI tdv = new TRUONGDONVI.TRUONGDONVI(connectString);
                             tdv.ShowDialog();
                             this.Show();
                         }
                         else if (id.StartsWith("NS03"))
                         {
-                            Data_Security.GIAOVU.GIAOVU gvu = new GIAOVU.GIAOVU();
+                            Data_Security.GIAOVU.GIAOVU gvu = new GIAOVU.GIAOVU(connectString);
                             gvu.ShowDialog();
                             this.Show();
                         }
                         else if (id.StartsWith("NS02"))
                         {
-                            Data_Security.GIANGVIEN.GIANGVIEN gv = new GIANGVIEN.GIANGVIEN();
+                            Data_Security.GIANGVIEN.GIANGVIEN gv = new GIANGVIEN.GIANGVIEN(connectString);
                             gv.ShowDialog();
                             this.Show();
                         }
                         else if (id.StartsWith("NS01"))
                         {
-                            Data_Security.NHANVIENCOBAN_.NHANVIENCB nv = new NHANVIENCOBAN_.NHANVIENCB();
+                            Data_Security.NHANVIENCOBAN_.NHANVIENCB nv = new NHANVIENCOBAN_.NHANVIENCB(connectString);
                             nv.ShowDialog();
                             this.Show();
                         }
                         else if (id.StartsWith("SV21"))
                         {
-                            Data_Security.SINHVIEN.SINHVIEN sv = new SINHVIEN.SINHVIEN();
+                            Data_Security.SINHVIEN.SINHVIEN sv = new SINHVIEN.SINHVIEN(connectString);
                             sv.ShowDialog();
                             this.Show();
                         }
