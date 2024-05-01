@@ -174,11 +174,35 @@
     <Compile Include="TRUONGDONVI\TRUONGDONVI.Designer.cs">
       <DependentUpon>TRUONGDONVI.cs</DependentUpon>
     </Compile>
+    <Compile Include="TRUONGKHOA\ChinhSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGKHOA\ChinhSua.Designer.cs">
+      <DependentUpon>ChinhSua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGKHOA\Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGKHOA\Table.Designer.cs">
+      <DependentUpon>Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGKHOA\Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGKHOA\Them.Designer.cs">
+      <DependentUpon>Them.cs</DependentUpon>
+    </Compile>
     <Compile Include="TRUONGKHOA\TRUONGKHOA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TRUONGKHOA\TRUONGKHOA.Designer.cs">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGKHOA\Xoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGKHOA\Xoa.Designer.cs">
+      <DependentUpon>Xoa.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Audit.resx">
       <DependentUpon>Audit.cs</DependentUpon>
@@ -234,8 +258,20 @@
     <EmbeddedResource Include="TRUONGDONVI\TRUONGDONVI.resx">
       <DependentUpon>TRUONGDONVI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGKHOA\ChinhSua.resx">
+      <DependentUpon>ChinhSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGKHOA\Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGKHOA\Them.resx">
+      <DependentUpon>Them.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TRUONGKHOA\TRUONGKHOA.resx">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGKHOA\Xoa.resx">
+      <DependentUpon>Xoa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
