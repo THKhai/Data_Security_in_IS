@@ -112,6 +112,7 @@ BEGIN
         policy_name     => 'SV_policy2'
     );
 END;
+/
 --2.
 BEGIN
     DBMS_RLS.DROP_POLICY (
@@ -134,6 +135,7 @@ BEGIN
         policy_name     => 'DK_policy1'
     );
 END;
+/
 --4
 BEGIN
     DBMS_RLS.DROP_POLICY (

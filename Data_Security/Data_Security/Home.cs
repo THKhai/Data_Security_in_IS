@@ -45,7 +45,7 @@ namespace Data_Security
         {
             try
             {
-                SERVICE_NAME = "XE";
+                SERVICE_NAME = "dba_security";
                 id = textBox1.Text;
                 password = textBox2.Text;
                 if (id.StartsWith("sys"))
