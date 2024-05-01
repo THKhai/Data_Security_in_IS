@@ -35,7 +35,9 @@ GRANT EXECUTE ON TO_LBAC_DATA_LABEL TO ADMIN_OLS; -- C?P QUY?N TH?C THI
 
  -- C?P QUY?N TH?C THI
 
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY ;
+connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY;
+CONNECT ADMIN_OLS/123@DESKTOP-OB2NBQU:1521/PDBQLDL;
+
 -- create policy ols
 ----------------------------------------------------------
 --select* from all_SA_LABELS;
@@ -283,4 +285,37 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
+--cau e
 EXEC SET_T1_TDV('TB00000001');
+create or replace procedure SET_T2_SV(MA in varchar2) as
+    STRSQL VARCHAR2(200);
+BEGIN
+        STRSQL := 'UPDATE ADMIN_OLS.THONGBAO SET Notification_Label = CHAR_TO_LABEL(''Notification_Policy'',''SV:HTTT:CS1'') WHERE MATB = :1';
+        EXECUTE IMMEDIATE STRSQL USING MA;
+END;
+/
+--cau f
+create or replace procedure SET_T3_TBM_CS1(MA in varchar2) as
+    STRSQL VARCHAR2(200);
+BEGIN
+        -- Thi?t l?p nh?n cho d¨°ng th?ng b¨¢o v?i MATB = MA
+        STRSQL := 'UPDATE ADMIN_OLS.THONGBAO SET Notification_Label = CHAR_TO_LABEL(''Notification_Policy'',''TBM:KHMT:CS1'') WHERE MATB = :1';
+        EXECUTE IMMEDIATE STRSQL USING MA;
+END;
+/
+--cau g
+create or replace procedure SET_T4_TBM_CS12(MA in varchar2) as
+    STRSQL VARCHAR2(200);
+BEGIN
+        -- Thi?t l?p nh?n cho d¨°ng th?ng b¨¢o v?i MATB = MA
+        STRSQL := 'UPDATE ADMIN_OLS.THONGBAO SET Notification_Label = CHAR_TO_LABEL(''Notification_Policy'',''TBM:KHMT:CS1,CS2'') WHERE MATB = :1';
+        EXECUTE IMMEDIATE STRSQL USING MA;
+END;
+/
+
+--h.
+--CS1: Giao vien duoc xem cac thong bao lien quan den giao vien, khong phan biet co so
+
+--CS2: Nhan vien o CS1 chi do duoc thong bao o CS1
+
+--CS3: Giao vu d??c xem thong bao cua Giao vien va Sinh vien
