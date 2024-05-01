@@ -1,0 +1,12 @@
+sqlplus \ as sysdba
+CREATE OR REPLACE DIRECTORY recovery_data_pump AS 'F:\Recovery\';
+GRANT READ,WRITE ON DIRECTORY recovery_data_pump TO SYSTEM;
+GRANT READ,WRITE ON DIRECTORY recovery_data_pump TO ADMINLC;
+GRANT datapump_exp_full_database TO ADMINLC;
+GRANT datapump_exp_full_database TO SYSTEM;
+grant datapump_imp_full_database to ADMINLC;
+grant datapump_imp_full_database to SYSTEM;
+
+expdp ADMINLC/ADMINLC@XE PARFILE = 'C:\backup\table.par'
+
+impdp ADMINLC/ADMINLC@XE DIRECTORY=recovery_data_pump DUMPFILE=adminlc_table.dmp LOGFILE=table_lg.log TABLES=SINHVIEN REMAP_TABLE=ADMINLC.SINHVIEN:SINHVIEN2 

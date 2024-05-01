@@ -28,6 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            this.SuspendLayout();
+            // 
+            // TRUONGKHOA
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "TRUONGKHOA";
+            this.Text = "TRUONGKHOA";
+            this.Load += new System.EventHandler(this.TRUONGKHOA_Load);
+
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -175,6 +187,7 @@
             this.Controls.Add(this.button1);
             this.Name = "TRUONGKHOA";
             this.Text = "TRUONGKHOA";
+
             this.Load += new System.EventHandler(this.TRUONGKHOA_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,0 +1,4 @@
+DIRECTORY = recovery_data_pump
+DUMPFILE = adminlc_table.dmp
+LOGFILE = table_lg.log
+TABLES = SINHVIEN,NHANSU
