@@ -66,7 +66,7 @@ End;
 /
 --2.
 connect ADMINLC/ADMINLC;
-CREATE OR REPLACE FUNCTION HP_KHMO_policy_function (p_schema VARCHAR2, p_obj VARCHAR2)
+
 RETURN VARCHAR2
 AS
 user_role VARCHAR2(30);
@@ -175,11 +175,11 @@ BEGIN
         object_name      => 'HOCPHAN', 
         policy_name      => 'HP_KHMO_policy1', 
         function_schema  => 'ADMINLC', 
-        policy_function  => 'HP_KHMO_policy_function',
+        policy_function  => 'HP_KHMO_policy_function2',
         statement_types  => 'SELECT',
         enable => TRUE
     );
-    
+
     DBMS_RLS.ADD_POLICY (
         object_schema    => 'ADMINLC',
         object_name      => 'KHMO', 
@@ -225,6 +225,7 @@ GRANT SELECT ON ADMINLC.HOCPHAN TO SinhVien;
 GRANT SELECT ON ADMINLC.KHMO TO SinhVien;
 GRANT SELECT, INSERT, DELETE ON ADMINLC.DANGKY TO SinhVien;
 
+GRANT SinhVien TO SV21000001;
 
 CREATE OR REPLACE PROCEDURE USP_CREATEUSER_SV
 AS
@@ -278,6 +279,6 @@ GRANT CONNECT TO SV2100000A;
 GRANT SELECT ON ADMINLC.DANGKY TO SV2100000A;
 CONNECT SV21000001/123;
 SELECT *
-FROM ADMINLC.DANGKY
+FROM ADMINLC.HOCPHAN
 
 GRANT TruongKhoa TO NS05000001;
