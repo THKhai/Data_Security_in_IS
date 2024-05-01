@@ -127,6 +127,15 @@ D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\
 <<<<<<< Updated upstream
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.NHANVIENCOBAN_.NHANVIENCB.resources
 D:\code_micro\oracle\AnToan\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGKHOA.TRUONGKHOA.resources
-=======
 C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.Audit.resources
 >>>>>>> Stashed changes
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.GIANGVIEN.GIANGVIEN.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.GIAOVU.GIAOVU.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.NHANVIENCOBAN_.NHANVIENCB.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.SINHVIEN.SINHVIEN.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGDONVI.TRUONGDONVI.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGKHOA.TRUONGKHOA.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGKHOA.Table.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGKHOA.Them.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGKHOA.ChinhSua.resources
+C:\Users\Dell\Downloads\Data_Security_in_IS\Data_Security\Data_Security\obj\Debug\Data_Security.TRUONGKHOA.Xoa.resources

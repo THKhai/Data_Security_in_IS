@@ -1,0 +1,12 @@
+Error report -
+ORA-42903: Cannot assign OLS authorizations to common or application users.
+ORA-06512: at "LBACSYS.SA_USER_ADMIN_INT", line 825
+ORA-06512: at "LBACSYS.SA_USER_ADMIN_INT", line 125
+ORA-06512: at "LBACSYS.SA_USER_ADMIN_INT", line 761
+ORA-06512: at "LBACSYS.SA_USER_ADMIN", line 224
+ORA-06512: at "ADMIN_OLS.SET_LABELS_GVU", line 16
+ORA-06512: at line 1
+42903. 00000 -  "Cannot assign OLS authorizations to common or application users."
+*Cause:    An attempt was made to assign Oracle Label Security (OLS)
+           authorizations to common or application users.
+*Action:   Assign OLS authorizations to local users only.
