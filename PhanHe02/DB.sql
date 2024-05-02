@@ -62,7 +62,7 @@ create table SINHVIEN(
 create table DONVI (
     MADV char(10) primary key,
     TENDV varchar(50),
-    TRGDV varchar(50) --ch?a ch?c , kh¨®a ngo?i t?i NHANSU
+    TRGDV varchar(50) --ch?a ch?c , khï¿½ï¿½a ngo?i t?i NHANSU
 );
 /
 
@@ -125,7 +125,7 @@ alter table DANGKY add  foreign key (MAGV,MAHP,HK,NAM,MACT) references PHANCONG(
 ----------------------------------------import data---------------------------------------------
 -- DONVI
 INSERT INTO DONVI (MADV, TENDV, TRGDV) 
-VALUES ('DV0001', 'V?n ph¨°ng khoa', NULL);
+VALUES ('DV0001', 'V?n phï¿½ï¿½ng khoa', NULL);
 
 INSERT INTO DONVI (MADV, TENDV, TRGDV) 
 VALUES ('DV0002', 'HTTT', NULL);
@@ -143,309 +143,309 @@ INSERT INTO DONVI (MADV, TENDV, TRGDV)
 VALUES ('DV0006', 'TGMT', NULL);
 
 INSERT INTO DONVI (MADV, TENDV, TRGDV) 
-VALUES ('DV0007', 'MMT v¨¤ Vi?n Th?ng', NULL);
+VALUES ('DV0007', 'MMT vï¿½ï¿½ Vi?n Th?ng', NULL);
 /
 --NHANSU
 
 INSERT INTO NHANSU  
-VALUES ('NS01000001', 'Tara Walia', 'Nam', to_date('1965-06-28', 'YYYY-MM-DD'), 386000, '+914876475938', 'Nh?n vi¨ºn c? b?n', 'DV0006');
+VALUES ('NS01000001', 'Tara Walia', 'Nam', to_date('1965-06-28', 'YYYY-MM-DD'), 386000, '+914876475938', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000002', 'Raunak Boase', 'Nam', to_date('2011-02-12', 'YYYY-MM-DD'), 238000, '+919489241157', 'Nh?n vi¨ºn c? b?n', 'DV0004');
+VALUES ('NS01000002', 'Raunak Boase', 'Nam', to_date('2011-02-12', 'YYYY-MM-DD'), 238000, '+919489241157', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000003', 'Sumer Kalla', 'N?', to_date('1951-04-15', 'YYYY-MM-DD'), 171000, '3877840801', 'Nh?n vi¨ºn c? b?n', 'DV0002');
+VALUES ('NS01000003', 'Sumer Kalla', 'N?', to_date('1951-04-15', 'YYYY-MM-DD'), 171000, '3877840801', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000004', 'Rhea Tella', 'Nam', to_date('2015-02-04', 'YYYY-MM-DD'), 368000, '0975351393', 'Nh?n vi¨ºn c? b?n', 'DV0004');
+VALUES ('NS01000004', 'Rhea Tella', 'Nam', to_date('2015-02-04', 'YYYY-MM-DD'), 368000, '0975351393', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000005', 'Zaina Bobal', 'N?', to_date('2017-07-25', 'YYYY-MM-DD'), 281000, '7115871484', 'Nh?n vi¨ºn c? b?n', 'DV0007');
+VALUES ('NS01000005', 'Zaina Bobal', 'N?', to_date('2017-07-25', 'YYYY-MM-DD'), 281000, '7115871484', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000006', 'Ira Ganesan', 'N?', to_date('2019-02-06', 'YYYY-MM-DD'), 344000, '3989471965', 'Nh?n vi¨ºn c? b?n', 'DV0002');
+VALUES ('NS01000006', 'Ira Ganesan', 'N?', to_date('2019-02-06', 'YYYY-MM-DD'), 344000, '3989471965', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000007', 'Riaan Chanda', 'N?', to_date('1934-01-10', 'YYYY-MM-DD'), 152000, '+910947112201', 'Nh?n vi¨ºn c? b?n', 'DV0004');
+VALUES ('NS01000007', 'Riaan Chanda', 'N?', to_date('1934-01-10', 'YYYY-MM-DD'), 152000, '+910947112201', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000008', 'Renee Lala', 'N?', to_date('1945-10-06', 'YYYY-MM-DD'), 304000, '3396947751', 'Nh?n vi¨ºn c? b?n', 'DV0007');
+VALUES ('NS01000008', 'Renee Lala', 'N?', to_date('1945-10-06', 'YYYY-MM-DD'), 304000, '3396947751', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000009', 'Manjari Bhardwaj', 'N?', to_date('1974-06-16', 'YYYY-MM-DD'), 144000, '5330413525', 'Nh?n vi¨ºn c? b?n', 'DV0005');
+VALUES ('NS01000009', 'Manjari Bhardwaj', 'N?', to_date('1974-06-16', 'YYYY-MM-DD'), 144000, '5330413525', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS01000010', 'Biju Bedi', 'Nam', to_date('2014-11-01', 'YYYY-MM-DD'), 256000, '+913098910139', 'Nh?n vi¨ºn c? b?n', 'DV0005');
+VALUES ('NS01000010', 'Biju Bedi', 'Nam', to_date('2014-11-01', 'YYYY-MM-DD'), 256000, '+913098910139', 'Nh?n viï¿½ï¿½n c? b?n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000001', 'Vihaan Bath', 'N?', to_date('1958-08-17', 'YYYY-MM-DD'), 389000, '+910903217300', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000001', 'Vihaan Bath', 'N?', to_date('1958-08-17', 'YYYY-MM-DD'), 389000, '+910903217300', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000002', 'Miraya Bedi', 'N?', to_date('2022-01-06', 'YYYY-MM-DD'), 320000, '01314562087', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000002', 'Miraya Bedi', 'N?', to_date('2022-01-06', 'YYYY-MM-DD'), 320000, '01314562087', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000003', 'Kimaya Bedi', 'Nam', to_date('2003-06-06', 'YYYY-MM-DD'), 366000, '03457923022', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000003', 'Kimaya Bedi', 'Nam', to_date('2003-06-06', 'YYYY-MM-DD'), 366000, '03457923022', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000004', 'Eva Dass', 'N?', to_date('1924-03-15', 'YYYY-MM-DD'), 285000, '7207698456', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000004', 'Eva Dass', 'N?', to_date('1924-03-15', 'YYYY-MM-DD'), 285000, '7207698456', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000005', 'Indrans Mand', 'N?', to_date('2002-04-09', 'YYYY-MM-DD'), 134000, '+917150842375', 'Gi?ng vi¨ºn', 'DV0005');
+VALUES ('NS02000005', 'Indrans Mand', 'N?', to_date('2002-04-09', 'YYYY-MM-DD'), 134000, '+917150842375', 'Gi?ng viï¿½ï¿½n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000006', 'Pari Gola', 'N?', to_date('1988-08-02', 'YYYY-MM-DD'), 486000, '9246610935', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000006', 'Pari Gola', 'N?', to_date('1988-08-02', 'YYYY-MM-DD'), 486000, '9246610935', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000007', 'Nakul Choudhury', 'N?', to_date('1995-01-01', 'YYYY-MM-DD'), 482000, '06960696027', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000007', 'Nakul Choudhury', 'N?', to_date('1995-01-01', 'YYYY-MM-DD'), 482000, '06960696027', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000008', 'Pranay Sarna', 'N?', to_date('1929-09-17', 'YYYY-MM-DD'), 489000, '08789007547', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000008', 'Pranay Sarna', 'N?', to_date('1929-09-17', 'YYYY-MM-DD'), 489000, '08789007547', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000009', 'Zoya Tata', 'Nam', to_date('2018-10-27', 'YYYY-MM-DD'), 375000, '03812066503', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000009', 'Zoya Tata', 'Nam', to_date('2018-10-27', 'YYYY-MM-DD'), 375000, '03812066503', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000010', 'Saanvi Shroff', 'Nam', to_date('1908-07-28', 'YYYY-MM-DD'), 335000, '8913193442', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000010', 'Saanvi Shroff', 'Nam', to_date('1908-07-28', 'YYYY-MM-DD'), 335000, '8913193442', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000011', 'Anika Varma', 'N?', to_date('1962-03-29', 'YYYY-MM-DD'), 131000, '1047142851', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000011', 'Anika Varma', 'N?', to_date('1962-03-29', 'YYYY-MM-DD'), 131000, '1047142851', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000012', 'Ranbir Varghese', 'N?', to_date('1910-10-12', 'YYYY-MM-DD'), 340000, '+910348559097', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000012', 'Ranbir Varghese', 'N?', to_date('1910-10-12', 'YYYY-MM-DD'), 340000, '+910348559097', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000013', 'Navya Kalla', 'Nam', to_date('1958-12-10', 'YYYY-MM-DD'), 334000, '2369402245', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000013', 'Navya Kalla', 'Nam', to_date('1958-12-10', 'YYYY-MM-DD'), 334000, '2369402245', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000014', 'Vritika Gour', 'Nam', to_date('2006-01-14', 'YYYY-MM-DD'), 487000, '+915900422945', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000014', 'Vritika Gour', 'Nam', to_date('2006-01-14', 'YYYY-MM-DD'), 487000, '+915900422945', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000015', 'Ira Bhattacharyya', 'N?', to_date('1948-03-08', 'YYYY-MM-DD'), 320000, '+917304281465', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000015', 'Ira Bhattacharyya', 'N?', to_date('1948-03-08', 'YYYY-MM-DD'), 320000, '+917304281465', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000016', 'Zeeshan Bhagat', 'Nam', to_date('1921-10-12', 'YYYY-MM-DD'), 335000, '7755171760', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000016', 'Zeeshan Bhagat', 'Nam', to_date('1921-10-12', 'YYYY-MM-DD'), 335000, '7755171760', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000017', 'Shamik Shah', 'Nam', to_date('2001-10-07', 'YYYY-MM-DD'), 145000, '+912961113306', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000017', 'Shamik Shah', 'Nam', to_date('2001-10-07', 'YYYY-MM-DD'), 145000, '+912961113306', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000018', 'Divyansh Hegde', 'Nam', to_date('1983-12-27', 'YYYY-MM-DD'), 443000, '4779361534', 'Gi?ng vi¨ºn', 'DV0005');
+VALUES ('NS02000018', 'Divyansh Hegde', 'Nam', to_date('1983-12-27', 'YYYY-MM-DD'), 443000, '4779361534', 'Gi?ng viï¿½ï¿½n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000019', 'Adah Char', 'Nam', to_date('1957-01-17', 'YYYY-MM-DD'), 149000, '+911087317643', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000019', 'Adah Char', 'Nam', to_date('1957-01-17', 'YYYY-MM-DD'), 149000, '+911087317643', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000020', 'Yasmin Chokshi', 'N?', to_date('1993-02-05', 'YYYY-MM-DD'), 348000, '+911376582197', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000020', 'Yasmin Chokshi', 'N?', to_date('1993-02-05', 'YYYY-MM-DD'), 348000, '+911376582197', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000021', 'Jivika Jain', 'N?', to_date('1995-02-18', 'YYYY-MM-DD'), 293000, '6875773893', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000021', 'Jivika Jain', 'N?', to_date('1995-02-18', 'YYYY-MM-DD'), 293000, '6875773893', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000022', 'Shlok Sastry', 'Nam', to_date('2009-12-03', 'YYYY-MM-DD'), 145000, '05082492694', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000022', 'Shlok Sastry', 'Nam', to_date('2009-12-03', 'YYYY-MM-DD'), 145000, '05082492694', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000023', 'Chirag Sura', 'Nam', to_date('1919-10-09', 'YYYY-MM-DD'), 205000, '0132040752', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000023', 'Chirag Sura', 'Nam', to_date('1919-10-09', 'YYYY-MM-DD'), 205000, '0132040752', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000024', 'Neysa Karpe', 'Nam', to_date('1958-10-15', 'YYYY-MM-DD'), 177000, '6880918916', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000024', 'Neysa Karpe', 'Nam', to_date('1958-10-15', 'YYYY-MM-DD'), 177000, '6880918916', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000025', 'Riaan Loyal', 'N?', to_date('1989-09-21', 'YYYY-MM-DD'), 269000, '07699300248', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000025', 'Riaan Loyal', 'N?', to_date('1989-09-21', 'YYYY-MM-DD'), 269000, '07699300248', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000026', 'Shamik Bali', 'Nam', to_date('1975-06-02', 'YYYY-MM-DD'), 357000, '04666022345', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000026', 'Shamik Bali', 'Nam', to_date('1975-06-02', 'YYYY-MM-DD'), 357000, '04666022345', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000027', 'Armaan Khosla', 'N?', to_date('1965-02-14', 'YYYY-MM-DD'), 185000, '+917912560976', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000027', 'Armaan Khosla', 'N?', to_date('1965-02-14', 'YYYY-MM-DD'), 185000, '+917912560976', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000028', 'Badal Bedi', 'Nam', to_date('1972-05-04', 'YYYY-MM-DD'), 377000, '+910099251853', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000028', 'Badal Bedi', 'Nam', to_date('1972-05-04', 'YYYY-MM-DD'), 377000, '+910099251853', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000029', 'Vardaniya Soni', 'N?', to_date('2014-01-23', 'YYYY-MM-DD'), 148000, '01097951942', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000029', 'Vardaniya Soni', 'N?', to_date('2014-01-23', 'YYYY-MM-DD'), 148000, '01097951942', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000030', 'Yasmin Din', 'Nam', to_date('2009-10-02', 'YYYY-MM-DD'), 249000, '1830675375', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000030', 'Yasmin Din', 'Nam', to_date('2009-10-02', 'YYYY-MM-DD'), 249000, '1830675375', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000031', 'Azad Yohannan', 'Nam', to_date('1913-09-10', 'YYYY-MM-DD'), 427000, '04089933188', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000031', 'Azad Yohannan', 'Nam', to_date('1913-09-10', 'YYYY-MM-DD'), 427000, '04089933188', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000032', 'Dishani Dua', 'N?', to_date('1923-09-10', 'YYYY-MM-DD'), 129000, '+916961161162', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000032', 'Dishani Dua', 'N?', to_date('1923-09-10', 'YYYY-MM-DD'), 129000, '+916961161162', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000033', 'Vritika Kapoor', 'Nam', to_date('1966-12-03', 'YYYY-MM-DD'), 157000, '6075415115', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000033', 'Vritika Kapoor', 'Nam', to_date('1966-12-03', 'YYYY-MM-DD'), 157000, '6075415115', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000034', 'Shray Ghosh', 'N?', to_date('1932-06-18', 'YYYY-MM-DD'), 205000, '+913519230310', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000034', 'Shray Ghosh', 'N?', to_date('1932-06-18', 'YYYY-MM-DD'), 205000, '+913519230310', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000035', 'Tushar Sant', 'Nam', to_date('1911-08-10', 'YYYY-MM-DD'), 278000, '3227175420', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000035', 'Tushar Sant', 'Nam', to_date('1911-08-10', 'YYYY-MM-DD'), 278000, '3227175420', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000036', 'Taran Ganesh', 'Nam', to_date('1972-09-04', 'YYYY-MM-DD'), 205000, '04852911894', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000036', 'Taran Ganesh', 'Nam', to_date('1972-09-04', 'YYYY-MM-DD'), 205000, '04852911894', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000037', 'Uthkarsh Yadav', 'Nam', to_date('1928-03-31', 'YYYY-MM-DD'), 448000, '+913583324560', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000037', 'Uthkarsh Yadav', 'Nam', to_date('1928-03-31', 'YYYY-MM-DD'), 448000, '+913583324560', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000038', 'Kismat Anne', 'Nam', to_date('1961-11-05', 'YYYY-MM-DD'), 292000, '+911264862964', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000038', 'Kismat Anne', 'Nam', to_date('1961-11-05', 'YYYY-MM-DD'), 292000, '+911264862964', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000039', 'Dharmajan Dash', 'N?', to_date('1968-10-15', 'YYYY-MM-DD'), 273000, '5806606573', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000039', 'Dharmajan Dash', 'N?', to_date('1968-10-15', 'YYYY-MM-DD'), 273000, '5806606573', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000040', 'Ritvik Keer', 'Nam', to_date('1920-08-23', 'YYYY-MM-DD'), 183000, '+911418927626', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000040', 'Ritvik Keer', 'Nam', to_date('1920-08-23', 'YYYY-MM-DD'), 183000, '+911418927626', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000041', 'Jayant Dasgupta', 'Nam', to_date('1969-12-18', 'YYYY-MM-DD'), 235000, '08257173407', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000041', 'Jayant Dasgupta', 'Nam', to_date('1969-12-18', 'YYYY-MM-DD'), 235000, '08257173407', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000042', 'Aarush Chopra', 'N?', to_date('1948-11-19', 'YYYY-MM-DD'), 281000, '+914892671738', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000042', 'Aarush Chopra', 'N?', to_date('1948-11-19', 'YYYY-MM-DD'), 281000, '+914892671738', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000043', 'Ranbir Raval', 'N?', to_date('1911-03-12', 'YYYY-MM-DD'), 437000, '+914004689671', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000043', 'Ranbir Raval', 'N?', to_date('1911-03-12', 'YYYY-MM-DD'), 437000, '+914004689671', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000044', 'Sumer Dhar', 'Nam', to_date('2011-01-14', 'YYYY-MM-DD'), 452000, '3910144851', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000044', 'Sumer Dhar', 'Nam', to_date('2011-01-14', 'YYYY-MM-DD'), 452000, '3910144851', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000045', 'Tarini Bumb', 'Nam', to_date('1917-07-08', 'YYYY-MM-DD'), 172000, '04482983816', 'Gi?ng vi¨ºn', 'DV0005');
+VALUES ('NS02000045', 'Tarini Bumb', 'Nam', to_date('1917-07-08', 'YYYY-MM-DD'), 172000, '04482983816', 'Gi?ng viï¿½ï¿½n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000046', 'Seher Sood', 'N?', to_date('2015-07-10', 'YYYY-MM-DD'), 358000, '04759221166', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000046', 'Seher Sood', 'N?', to_date('2015-07-10', 'YYYY-MM-DD'), 358000, '04759221166', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000047', 'Hiran Mammen', 'N?', to_date('1999-03-15', 'YYYY-MM-DD'), 474000, '05763778570', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000047', 'Hiran Mammen', 'N?', to_date('1999-03-15', 'YYYY-MM-DD'), 474000, '05763778570', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000048', 'Rohan Bora', 'N?', to_date('2009-09-03', 'YYYY-MM-DD'), 279000, '00930576081', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000048', 'Rohan Bora', 'N?', to_date('2009-09-03', 'YYYY-MM-DD'), 279000, '00930576081', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000049', 'Piya Shanker', 'Nam', to_date('1999-04-21', 'YYYY-MM-DD'), 314000, '00501904432', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000049', 'Piya Shanker', 'Nam', to_date('1999-04-21', 'YYYY-MM-DD'), 314000, '00501904432', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000050', 'Kanav Ben', 'Nam', to_date('1967-04-28', 'YYYY-MM-DD'), 375000, '05625662728', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000050', 'Kanav Ben', 'Nam', to_date('1967-04-28', 'YYYY-MM-DD'), 375000, '05625662728', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000051', 'Hansh Chawla', 'N?', to_date('1933-09-05', 'YYYY-MM-DD'), 461000, '05667633739', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000051', 'Hansh Chawla', 'N?', to_date('1933-09-05', 'YYYY-MM-DD'), 461000, '05667633739', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000052', 'Vidur Badal', 'N?', to_date('1940-02-07', 'YYYY-MM-DD'), 148000, '1250239491', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000052', 'Vidur Badal', 'N?', to_date('1940-02-07', 'YYYY-MM-DD'), 148000, '1250239491', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000053', 'Trisha Vyas', 'N?', to_date('1956-04-21', 'YYYY-MM-DD'), 153000, '07088697747', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000053', 'Trisha Vyas', 'N?', to_date('1956-04-21', 'YYYY-MM-DD'), 153000, '07088697747', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000054', 'Shayak Deol', 'Nam', to_date('1913-12-31', 'YYYY-MM-DD'), 384000, '+910250402163', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000054', 'Shayak Deol', 'Nam', to_date('1913-12-31', 'YYYY-MM-DD'), 384000, '+910250402163', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000055', 'Ivana Choudhry', 'Nam', to_date('1969-12-31', 'YYYY-MM-DD'), 428000, '+915919155875', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000055', 'Ivana Choudhry', 'Nam', to_date('1969-12-31', 'YYYY-MM-DD'), 428000, '+915919155875', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000056', 'Aniruddh Lal', 'Nam', to_date('1914-04-15', 'YYYY-MM-DD'), 351000, '+915138533444', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000056', 'Aniruddh Lal', 'Nam', to_date('1914-04-15', 'YYYY-MM-DD'), 351000, '+915138533444', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000057', 'Onkar Khosla', 'Nam', to_date('1955-01-23', 'YYYY-MM-DD'), 190000, '3048107770', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000057', 'Onkar Khosla', 'Nam', to_date('1955-01-23', 'YYYY-MM-DD'), 190000, '3048107770', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000058', 'Bhamini Karpe', 'N?', to_date('1968-02-24', 'YYYY-MM-DD'), 329000, '+911131263791', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000058', 'Bhamini Karpe', 'N?', to_date('1968-02-24', 'YYYY-MM-DD'), 329000, '+911131263791', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000059', 'Jhanvi Shroff', 'N?', to_date('2021-02-14', 'YYYY-MM-DD'), 330000, '00237324556', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000059', 'Jhanvi Shroff', 'N?', to_date('2021-02-14', 'YYYY-MM-DD'), 330000, '00237324556', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000060', 'Ivana Yogi', 'Nam', to_date('1947-02-09', 'YYYY-MM-DD'), 307000, '8347897844', 'Gi?ng vi¨ºn', 'DV0005');
+VALUES ('NS02000060', 'Ivana Yogi', 'Nam', to_date('1947-02-09', 'YYYY-MM-DD'), 307000, '8347897844', 'Gi?ng viï¿½ï¿½n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000061', 'Advik Bhargava', 'Nam', to_date('1991-12-08', 'YYYY-MM-DD'), 208000, '1263340886', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000061', 'Advik Bhargava', 'Nam', to_date('1991-12-08', 'YYYY-MM-DD'), 208000, '1263340886', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000062', 'Gatik Handa', 'N?', to_date('1996-01-23', 'YYYY-MM-DD'), 296000, '01953843318', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000062', 'Gatik Handa', 'N?', to_date('1996-01-23', 'YYYY-MM-DD'), 296000, '01953843318', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000063', 'Pari Gade', 'N?', to_date('1940-01-17', 'YYYY-MM-DD'), 412000, '07492208855', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000063', 'Pari Gade', 'N?', to_date('1940-01-17', 'YYYY-MM-DD'), 412000, '07492208855', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000064', 'Zoya Bhattacharyya', 'Nam', to_date('1962-02-02', 'YYYY-MM-DD'), 162000, '+912812379332', 'Gi?ng vi¨ºn', 'DV0005');
+VALUES ('NS02000064', 'Zoya Bhattacharyya', 'Nam', to_date('1962-02-02', 'YYYY-MM-DD'), 162000, '+912812379332', 'Gi?ng viï¿½ï¿½n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000065', 'Tara Handa', 'Nam', to_date('1956-05-10', 'YYYY-MM-DD'), 384000, '9271908957', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000065', 'Tara Handa', 'Nam', to_date('1956-05-10', 'YYYY-MM-DD'), 384000, '9271908957', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000066', 'Sahil Ahuja', 'Nam', to_date('1938-03-15', 'YYYY-MM-DD'), 230000, '2778514296', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000066', 'Sahil Ahuja', 'Nam', to_date('1938-03-15', 'YYYY-MM-DD'), 230000, '2778514296', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000067', 'Samar Srivastava', 'Nam', to_date('1947-12-15', 'YYYY-MM-DD'), 141000, '00305357345', 'Gi?ng vi¨ºn', 'DV0007');
+VALUES ('NS02000067', 'Samar Srivastava', 'Nam', to_date('1947-12-15', 'YYYY-MM-DD'), 141000, '00305357345', 'Gi?ng viï¿½ï¿½n', 'DV0007');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000068', 'Ryan Anand', 'Nam', to_date('1956-10-01', 'YYYY-MM-DD'), 227000, '8025070030', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000068', 'Ryan Anand', 'Nam', to_date('1956-10-01', 'YYYY-MM-DD'), 227000, '8025070030', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000069', 'Mamooty Sachdeva', 'N?', to_date('1952-09-16', 'YYYY-MM-DD'), 421000, '+910562376254', 'Gi?ng vi¨ºn', 'DV0004');
+VALUES ('NS02000069', 'Mamooty Sachdeva', 'N?', to_date('1952-09-16', 'YYYY-MM-DD'), 421000, '+910562376254', 'Gi?ng viï¿½ï¿½n', 'DV0004');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000070', 'Nehmat Gala', 'N?', to_date('2007-05-05', 'YYYY-MM-DD'), 289000, '6606488709', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000070', 'Nehmat Gala', 'N?', to_date('2007-05-05', 'YYYY-MM-DD'), 289000, '6606488709', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000071', 'Yuvraj  Hayer', 'N?', to_date('1931-07-27', 'YYYY-MM-DD'), 188000, '+918298215323', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000071', 'Yuvraj  Hayer', 'N?', to_date('1931-07-27', 'YYYY-MM-DD'), 188000, '+918298215323', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000072', 'Zara Wason', 'N?', to_date('1931-03-26', 'YYYY-MM-DD'), 117000, '8216919729', 'Gi?ng vi¨ºn', 'DV0006');
+VALUES ('NS02000072', 'Zara Wason', 'N?', to_date('1931-03-26', 'YYYY-MM-DD'), 117000, '8216919729', 'Gi?ng viï¿½ï¿½n', 'DV0006');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000073', 'Ojas Garde', 'N?', to_date('2017-12-07', 'YYYY-MM-DD'), 486000, '6007154273', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000073', 'Ojas Garde', 'N?', to_date('2017-12-07', 'YYYY-MM-DD'), 486000, '6007154273', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000074', 'Ishaan Shah', 'N?', to_date('2010-09-24', 'YYYY-MM-DD'), 245000, '05476048487', 'Gi?ng vi¨ºn', 'DV0005');
+VALUES ('NS02000074', 'Ishaan Shah', 'N?', to_date('2010-09-24', 'YYYY-MM-DD'), 245000, '05476048487', 'Gi?ng viï¿½ï¿½n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000075', 'Trisha Lata', 'N?', to_date('1985-11-23', 'YYYY-MM-DD'), 191000, '4076165700', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000075', 'Trisha Lata', 'N?', to_date('1985-11-23', 'YYYY-MM-DD'), 191000, '4076165700', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000076', 'Seher Badal', 'Nam', to_date('1942-10-23', 'YYYY-MM-DD'), 105000, '9438856431', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000076', 'Seher Badal', 'Nam', to_date('1942-10-23', 'YYYY-MM-DD'), 105000, '9438856431', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000077', 'Zara Dara', 'Nam', to_date('1988-01-10', 'YYYY-MM-DD'), 402000, '8522509092', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000077', 'Zara Dara', 'Nam', to_date('1988-01-10', 'YYYY-MM-DD'), 402000, '8522509092', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000078', 'Taran Dhingra', 'Nam', to_date('1993-05-30', 'YYYY-MM-DD'), 276000, '05769620290', 'Gi?ng vi¨ºn', 'DV0002');
+VALUES ('NS02000078', 'Taran Dhingra', 'Nam', to_date('1993-05-30', 'YYYY-MM-DD'), 276000, '05769620290', 'Gi?ng viï¿½ï¿½n', 'DV0002');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000079', 'Gokul Garde', 'Nam', to_date('1909-07-09', 'YYYY-MM-DD'), 124000, '7493186428', 'Gi?ng vi¨ºn', 'DV0003');
+VALUES ('NS02000079', 'Gokul Garde', 'Nam', to_date('1909-07-09', 'YYYY-MM-DD'), 124000, '7493186428', 'Gi?ng viï¿½ï¿½n', 'DV0003');
 
 INSERT INTO NHANSU  
-VALUES ('NS02000080', 'Chirag Sahni', 'N?', to_date('1995-04-10', 'YYYY-MM-DD'), 113000, '+919188966444', 'Gi?ng vi¨ºn', 'DV0005');
+VALUES ('NS02000080', 'Chirag Sahni', 'N?', to_date('1995-04-10', 'YYYY-MM-DD'), 113000, '+919188966444', 'Gi?ng viï¿½ï¿½n', 'DV0005');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000001', 'Aaryahi Sood', 'N?', to_date('2019-10-27', 'YYYY-MM-DD'), 366000, '4488855362', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000001', 'Aaryahi Sood', 'N?', to_date('2019-10-27', 'YYYY-MM-DD'), 366000, '4488855362', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000002', 'Suhana Kumer', 'N?', to_date('1929-05-23', 'YYYY-MM-DD'), 387000, '9657086930', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000002', 'Suhana Kumer', 'N?', to_date('1929-05-23', 'YYYY-MM-DD'), 387000, '9657086930', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000003', 'Eva Buch', 'N?', to_date('2000-10-31', 'YYYY-MM-DD'), 387000, '+915703934261', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000003', 'Eva Buch', 'N?', to_date('2000-10-31', 'YYYY-MM-DD'), 387000, '+915703934261', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000004', 'Miraan Sharaf', 'Nam', to_date('2005-05-26', 'YYYY-MM-DD'), 285000, '08132716644', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000004', 'Miraan Sharaf', 'Nam', to_date('2005-05-26', 'YYYY-MM-DD'), 285000, '08132716644', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000005', 'Tanya Soman', 'N?', to_date('1956-09-21', 'YYYY-MM-DD'), 411000, '5140704366', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000005', 'Tanya Soman', 'N?', to_date('1956-09-21', 'YYYY-MM-DD'), 411000, '5140704366', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000006', 'Urvi Ravi', 'N?', to_date('1993-05-26', 'YYYY-MM-DD'), 196000, '6097592945', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000006', 'Urvi Ravi', 'N?', to_date('1993-05-26', 'YYYY-MM-DD'), 196000, '6097592945', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000007', 'Vivaan Khalsa', 'Nam', to_date('1979-04-03', 'YYYY-MM-DD'), 438000, '+910195501318', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000007', 'Vivaan Khalsa', 'Nam', to_date('1979-04-03', 'YYYY-MM-DD'), 438000, '+910195501318', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000008', 'Azad Dugar', 'Nam', to_date('2022-10-05', 'YYYY-MM-DD'), 437000, '+915624629264', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000008', 'Azad Dugar', 'Nam', to_date('2022-10-05', 'YYYY-MM-DD'), 437000, '+915624629264', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000009', 'Ishaan Bhatnagar', 'N?', to_date('1926-06-25', 'YYYY-MM-DD'), 132000, '00808625911', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000009', 'Ishaan Bhatnagar', 'N?', to_date('1926-06-25', 'YYYY-MM-DD'), 132000, '00808625911', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
-VALUES ('NS03000010', 'Prerak Chaudhuri', 'N?', to_date('2017-02-27', 'YYYY-MM-DD'), 194000, '05448727820', 'Gi¨¢o v?', 'DV0001');
+VALUES ('NS03000010', 'Prerak Chaudhuri', 'N?', to_date('2017-02-27', 'YYYY-MM-DD'), 194000, '05448727820', 'Giï¿½ï¿½o v?', 'DV0001');
 
 INSERT INTO NHANSU  
 VALUES ('NS04000001', 'Nayantara Kunda', 'Nam', to_date('1912-11-06', 'YYYY-MM-DD'), 102000, '01379378252', 'Tr??ng ??n v?', 'DV0002');
@@ -742,7 +742,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000090', 'Yakshit Malhotra', 'Nam', to_date('1908-05-04', 'YYYY-MM-DD'), '64/726 Hora Marg Dharmavaram', '9478546925', 'VP', 'CNPM', 68, 4.12);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000091', 'Aarna Kanda', 'N?', to_date('1968-04-02', 'YYYY-MM-DD'), 'H.No. 13 D¡¯Alia Path Gandhinagar', '+919522711290', 'CLC', 'CNTT', 130, 6.6);
+VALUES ('SV21000091', 'Aarna Kanda', 'N?', to_date('1968-04-02', 'YYYY-MM-DD'), 'H.No. 13 Dï¿½ï¿½Alia Path Gandhinagar', '+919522711290', 'CLC', 'CNTT', 130, 6.6);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000092', 'Nehmat Chakraborty', 'Nam', to_date('1909-08-07', 'YYYY-MM-DD'), '86/624 Kannan Marg Bijapur', '0272117444', 'CTTT', 'KHMT', 68, 5.18);
@@ -1057,7 +1057,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000195', 'Jivika Brahmbhatt', 'N?', to_date('2006-10-08', 'YYYY-MM-DD'), 'H.No. 530 Vohra Marg Gandhinagar', '05383999073', 'VP', 'CNTT', 39, 6.74);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000196', 'Ranbir Buch', 'Nam', to_date('1933-04-26', 'YYYY-MM-DD'), '30 D¡¯Alia Zila Tenali', '06029440934', 'CQ', 'MMT', 79, 9.85);
+VALUES ('SV21000196', 'Ranbir Buch', 'Nam', to_date('1933-04-26', 'YYYY-MM-DD'), '30 Dï¿½ï¿½Alia Zila Tenali', '06029440934', 'CQ', 'MMT', 79, 9.85);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000197', 'Vaibhav Bhalla', 'Nam', to_date('1991-09-17', 'YYYY-MM-DD'), '51/753 Mannan Varanasi', '+915734410196', 'CQ', 'CNTT', 102, 9.66);
@@ -1186,7 +1186,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000238', 'Nirvi Babu', 'N?', to_date('2023-09-10', 'YYYY-MM-DD'), 'H.No. 997 Chaudhari Chowk Sultan Pur Majra', '0430358406', 'CTTT', 'HTTT', 16, 9.65);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000239', 'Rania Chawla', 'N?', to_date('1941-05-29', 'YYYY-MM-DD'), '509 Bakshi Zila Hubli¨CDharwad', '+915918643277', 'CLC', 'CNTT', 104, 5.16);
+VALUES ('SV21000239', 'Rania Chawla', 'N?', to_date('1941-05-29', 'YYYY-MM-DD'), '509 Bakshi Zila Hubliï¿½CDharwad', '+915918643277', 'CLC', 'CNTT', 104, 5.16);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000240', 'Madhup Vora', 'N?', to_date('1988-04-08', 'YYYY-MM-DD'), 'H.No. 882 Swamy Zila Mau', '2146432133', 'CLC', 'HTTT', 134, 6.44);
@@ -1225,7 +1225,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000251', 'Nitya Madan', 'Nam', to_date('1939-01-29', 'YYYY-MM-DD'), '07/933 Comar Visakhapatnam', '01656529672', 'CTTT', 'HTTT', 127, 8.54);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000252', 'Indranil D¡¯Alia', 'Nam', to_date('1913-06-04', 'YYYY-MM-DD'), 'H.No. 77 Sani Zila Ozhukarai', '09240384431', 'CQ', 'HTTT', 30, 8.94);
+VALUES ('SV21000252', 'Indranil Dï¿½ï¿½Alia', 'Nam', to_date('1913-06-04', 'YYYY-MM-DD'), 'H.No. 77 Sani Zila Ozhukarai', '09240384431', 'CQ', 'HTTT', 30, 8.94);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000253', 'Farhan Lata', 'Nam', to_date('1974-07-16', 'YYYY-MM-DD'), '52/481 Chaudry Nagar Korba', '08255343806', 'CLC', 'MMT', 98, 6.82);
@@ -1696,7 +1696,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000408', 'Aarna Dugar', 'Nam', to_date('1911-07-23', 'YYYY-MM-DD'), '62 Din Satara', '+911329607545', 'CLC', 'KHMT', 19, 8.21);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000409', 'Emir Agarwal', 'N?', to_date('2013-02-15', 'YYYY-MM-DD'), 'H.No. 546 D¡¯Alia Munger', '+919191490645', 'CTTT', 'KHMT', 83, 5.52);
+VALUES ('SV21000409', 'Emir Agarwal', 'N?', to_date('2013-02-15', 'YYYY-MM-DD'), 'H.No. 546 Dï¿½ï¿½Alia Munger', '+919191490645', 'CTTT', 'KHMT', 83, 5.52);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000410', 'Kabir Gole', 'N?', to_date('1959-07-13', 'YYYY-MM-DD'), '91/86 Dayal Path Thanjavur', '+919273317209', 'CLC', 'CNTT', 28, 4.58);
@@ -1732,7 +1732,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000420', 'Ryan Krish', 'Nam', to_date('1964-10-15', 'YYYY-MM-DD'), '56 Issac Chowk Kulti', '+911458054571', 'CTTT', 'HTTT', 22, 9.68);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000421', 'Arhaan Ramaswamy', 'Nam', to_date('2004-05-12', 'YYYY-MM-DD'), 'H.No. 630 D¡¯Alia Road Bijapur', '+916641034801', 'VP', 'HTTT', 54, 9.63);
+VALUES ('SV21000421', 'Arhaan Ramaswamy', 'Nam', to_date('2004-05-12', 'YYYY-MM-DD'), 'H.No. 630 Dï¿½ï¿½Alia Road Bijapur', '+916641034801', 'VP', 'HTTT', 54, 9.63);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000422', 'Indrans Chowdhury', 'N?', to_date('1935-12-19', 'YYYY-MM-DD'), '411 Kata Ganj Jabalpur', '+917256657299', 'VP', 'TGMT', 67, 6.68);
@@ -2434,7 +2434,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000654', 'Gokul Kuruvilla', 'N?', to_date('2000-03-08', 'YYYY-MM-DD'), '013 Madan Ganj Bongaigaon', '8778151537', 'VP', 'HTTT', 122, 8.98);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000655', 'Divij Bhasin', 'Nam', to_date('1994-08-05', 'YYYY-MM-DD'), '27 Sheth Road Hubli¨CDharwad', '02984829310', 'CLC', 'HTTT', 7, 8.07);
+VALUES ('SV21000655', 'Divij Bhasin', 'Nam', to_date('1994-08-05', 'YYYY-MM-DD'), '27 Sheth Road Hubliï¿½CDharwad', '02984829310', 'CLC', 'HTTT', 7, 8.07);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000656', 'Sahil Dewan', 'Nam', to_date('2007-04-01', 'YYYY-MM-DD'), '37 Rastogi Circle Panihati', '06368921936', 'VP', 'KHMT', 59, 9.63);
@@ -2578,7 +2578,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000702', 'Anahita Mane', 'N?', to_date('1974-11-07', 'YYYY-MM-DD'), '468 Gole Katihar', '1376689448', 'CTTT', 'CNPM', 12, 5.19);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000703', 'Nehmat D¡¯Alia', 'Nam', to_date('2020-04-07', 'YYYY-MM-DD'), 'H.No. 435 Kothari Path Chandrapur', '+919326840180', 'CTTT', 'TGMT', 26, 9.07);
+VALUES ('SV21000703', 'Nehmat Dï¿½ï¿½Alia', 'Nam', to_date('2020-04-07', 'YYYY-MM-DD'), 'H.No. 435 Kothari Path Chandrapur', '+919326840180', 'CTTT', 'TGMT', 26, 9.07);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000704', 'Taran Kade', 'N?', to_date('1935-03-17', 'YYYY-MM-DD'), 'H.No. 629 Vala Street Dibrugarh', '+914867631085', 'CLC', 'TGMT', 96, 7.46);
@@ -2611,7 +2611,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21000713', 'Diya Bahri', 'Nam', to_date('1914-01-26', 'YYYY-MM-DD'), 'H.No. 512 Solanki Road Kolkata', '00660168433', 'VP', 'CNPM', 130, 4.45);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21000714', 'Faiyaz Bansal', 'N?', to_date('1958-04-09', 'YYYY-MM-DD'), '80 D¡¯Alia Path Baranagar', '6079521068', 'CLC', 'CNPM', 116, 4.37);
+VALUES ('SV21000714', 'Faiyaz Bansal', 'N?', to_date('1958-04-09', 'YYYY-MM-DD'), '80 Dï¿½ï¿½Alia Path Baranagar', '6079521068', 'CLC', 'CNPM', 116, 4.37);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21000715', 'Mishti Sekhon', 'Nam', to_date('2006-01-22', 'YYYY-MM-DD'), 'H.No. 05 Raju Road Madanapalle', '02149828740', 'VP', 'HTTT', 83, 8.67);
@@ -3487,7 +3487,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001005', 'Ranbir Desai', 'N?', to_date('1994-08-21', 'YYYY-MM-DD'), 'H.No. 80 Apte Nagar Nizamabad', '+912225558865', 'CLC', 'HTTT', 65, 9.26);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001006', 'Kimaya Rao', 'N?', to_date('2017-03-09', 'YYYY-MM-DD'), 'H.No. 19 D¡¯Alia Zila Chennai', '02651062402', 'CQ', 'MMT', 18, 7.05);
+VALUES ('SV21001006', 'Kimaya Rao', 'N?', to_date('2017-03-09', 'YYYY-MM-DD'), 'H.No. 19 Dï¿½ï¿½Alia Zila Chennai', '02651062402', 'CQ', 'MMT', 18, 7.05);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001007', 'Ryan Dalal', 'Nam', to_date('2012-08-23', 'YYYY-MM-DD'), 'H.No. 18 Badami Ganj Patna', '+911678777077', 'CLC', 'MMT', 40, 7.44);
@@ -3760,7 +3760,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001096', 'Dharmajan Bumb', 'N?', to_date('1932-06-04', 'YYYY-MM-DD'), '19 Jayaraman Circle Malda', '+910206371450', 'CQ', 'HTTT', 129, 9.39);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001097', 'Tarini D¡¯Alia', 'Nam', to_date('1922-05-28', 'YYYY-MM-DD'), '542 Ratta Chowk Varanasi', '+912260992772', 'VP', 'TGMT', 52, 6.98);
+VALUES ('SV21001097', 'Tarini Dï¿½ï¿½Alia', 'Nam', to_date('1922-05-28', 'YYYY-MM-DD'), '542 Ratta Chowk Varanasi', '+912260992772', 'VP', 'TGMT', 52, 6.98);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001098', 'Siya Dua', 'Nam', to_date('1937-06-12', 'YYYY-MM-DD'), '91 Comar Street Chinsurah', '+918423343612', 'CTTT', 'TGMT', 136, 5.15);
@@ -3973,7 +3973,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001167', 'Eshani Yogi', 'Nam', to_date('1973-03-02', 'YYYY-MM-DD'), '76/92 Deep Marg Rajpur Sonarpur', '0937813897', 'VP', 'CNTT', 26, 8.33);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001168', 'Eshani D¡¯Alia', 'N?', to_date('2016-01-24', 'YYYY-MM-DD'), 'H.No. 448 Raja Nagar Saharanpur', '+919649510227', 'VP', 'MMT', 35, 8.88);
+VALUES ('SV21001168', 'Eshani Dï¿½ï¿½Alia', 'N?', to_date('2016-01-24', 'YYYY-MM-DD'), 'H.No. 448 Raja Nagar Saharanpur', '+919649510227', 'VP', 'MMT', 35, 8.88);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001169', 'Jhanvi Kashyap', 'Nam', to_date('1958-07-30', 'YYYY-MM-DD'), 'H.No. 63 Buch Circle Kulti', '7638910839', 'VP', 'MMT', 111, 9.74);
@@ -4834,7 +4834,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001454', 'Azad Basu', 'N?', to_date('1969-01-30', 'YYYY-MM-DD'), '882 Sankar Srikakulam', '01831873354', 'CQ', 'TGMT', 68, 6.43);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001455', 'Nishith D¡¯Alia', 'N?', to_date('1983-06-17', 'YYYY-MM-DD'), '541 Swaminathan Zila Nashik', '5312860870', 'CTTT', 'TGMT', 19, 8.54);
+VALUES ('SV21001455', 'Nishith Dï¿½ï¿½Alia', 'N?', to_date('1983-06-17', 'YYYY-MM-DD'), '541 Swaminathan Zila Nashik', '5312860870', 'CTTT', 'TGMT', 19, 8.54);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001456', 'Bhavin Chopra', 'N?', to_date('1998-04-13', 'YYYY-MM-DD'), '54/54 Vohra Ganj Malegaon', '+912954493615', 'VP', 'CNTT', 104, 6.8);
@@ -5029,7 +5029,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001519', 'Hrishita Chahal', 'Nam', to_date('1984-10-25', 'YYYY-MM-DD'), 'H.No. 094 Choudhary Zila Sambalpur', '03432576383', 'CTTT', 'MMT', 68, 6.32);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001520', 'Rohan Venkataraman', 'Nam', to_date('1968-09-28', 'YYYY-MM-DD'), '56/36 D¡¯Alia Path Adoni', '07213139419', 'CTTT', 'TGMT', 137, 7.01);
+VALUES ('SV21001520', 'Rohan Venkataraman', 'Nam', to_date('1968-09-28', 'YYYY-MM-DD'), '56/36 Dï¿½ï¿½Alia Path Adoni', '07213139419', 'CTTT', 'TGMT', 137, 7.01);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001521', 'Ryan Dash', 'Nam', to_date('1947-07-11', 'YYYY-MM-DD'), '72/912 Sarna Nagar Mysore', '1446010214', 'CLC', 'TGMT', 28, 8.25);
@@ -5494,7 +5494,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001674', 'Damini Rastogi', 'Nam', to_date('1938-11-12', 'YYYY-MM-DD'), 'H.No. 75 Tailor Nagar Madanapalle', '+912869307185', 'CLC', 'CNPM', 56, 4.04);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001675', 'Dishani Tara', 'Nam', to_date('1956-01-04', 'YYYY-MM-DD'), '17 Balasubramanian Road Hubli¨CDharwad', '00712621249', 'CLC', 'KHMT', 81, 5.5);
+VALUES ('SV21001675', 'Dishani Tara', 'Nam', to_date('1956-01-04', 'YYYY-MM-DD'), '17 Balasubramanian Road Hubliï¿½CDharwad', '00712621249', 'CLC', 'KHMT', 81, 5.5);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001676', 'Rohan Kashyap', 'Nam', to_date('1926-11-11', 'YYYY-MM-DD'), 'H.No. 08 Kata Ganj Sasaram', '06739681704', 'VP', 'KHMT', 10, 8.03);
@@ -5527,7 +5527,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001685', 'Riaan Saraf', 'N?', to_date('1977-12-21', 'YYYY-MM-DD'), 'H.No. 70 Chaudhuri Road Rajkot', '+911999902956', 'CLC', 'TGMT', 61, 9.85);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001686', 'Zara D¡¯Alia', 'Nam', to_date('1927-10-22', 'YYYY-MM-DD'), '24 Sant Ganj Ulhasnagar', '00594563369', 'CLC', 'CNTT', 127, 6.17);
+VALUES ('SV21001686', 'Zara Dï¿½ï¿½Alia', 'Nam', to_date('1927-10-22', 'YYYY-MM-DD'), '24 Sant Ganj Ulhasnagar', '00594563369', 'CLC', 'CNTT', 127, 6.17);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001687', 'Kanav Rout', 'Nam', to_date('1944-07-04', 'YYYY-MM-DD'), '47/399 Chatterjee Ganj Chandigarh', '+917190142946', 'CLC', 'MMT', 96, 5.34);
@@ -5581,7 +5581,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001703', 'Navya Johal', 'Nam', to_date('1918-05-30', 'YYYY-MM-DD'), '40 Saxena Road Jorhat', '2160957598', 'VP', 'HTTT', 5, 6.51);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001704', 'Samar Shan', 'Nam', to_date('1924-10-12', 'YYYY-MM-DD'), '83/12 Buch Street Hubli¨CDharwad', '06025856617', 'VP', 'HTTT', 6, 7.2);
+VALUES ('SV21001704', 'Samar Shan', 'Nam', to_date('1924-10-12', 'YYYY-MM-DD'), '83/12 Buch Street Hubliï¿½CDharwad', '06025856617', 'VP', 'HTTT', 6, 7.2);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001705', 'Shamik Vasa', 'Nam', to_date('2016-10-12', 'YYYY-MM-DD'), '89/588 Kumer Marg Malegaon', '+912872565328', 'CQ', 'MMT', 58, 9.23);
@@ -6265,7 +6265,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001931', 'Dhanuk Bir', 'N?', to_date('1978-12-19', 'YYYY-MM-DD'), '16/59 Tandon Ganj Naihati', '+914720484063', 'VP', 'TGMT', 24, 9.96);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001932', 'Anvi D¡¯Alia', 'Nam', to_date('1930-01-14', 'YYYY-MM-DD'), '29/424 Korpal Nagar Deoghar', '05822064139', 'VP', 'KHMT', 96, 5.17);
+VALUES ('SV21001932', 'Anvi Dï¿½ï¿½Alia', 'Nam', to_date('1930-01-14', 'YYYY-MM-DD'), '29/424 Korpal Nagar Deoghar', '05822064139', 'VP', 'KHMT', 96, 5.17);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001933', 'Reyansh Tata', 'Nam', to_date('1996-04-29', 'YYYY-MM-DD'), '18/93 Tiwari Shimoga', '5924522578', 'VP', 'HTTT', 84, 4.07);
@@ -6445,7 +6445,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21001991', 'Zeeshan Sanghvi', 'Nam', to_date('1939-03-17', 'YYYY-MM-DD'), '35/572 Sama Path Kavali', '5094945433', 'CTTT', 'HTTT', 101, 8.01);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21001992', 'Yakshit Raja', 'N?', to_date('1927-10-25', 'YYYY-MM-DD'), '650 Bose Street Hubli¨CDharwad', '03386311806', 'VP', 'MMT', 82, 9.38);
+VALUES ('SV21001992', 'Yakshit Raja', 'N?', to_date('1927-10-25', 'YYYY-MM-DD'), '650 Bose Street Hubliï¿½CDharwad', '03386311806', 'VP', 'MMT', 82, 9.38);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21001993', 'Indrajit Zachariah', 'N?', to_date('1979-12-19', 'YYYY-MM-DD'), 'H.No. 89 Varughese Path Salem', '04016362553', 'CTTT', 'CNPM', 21, 7.06);
@@ -6481,7 +6481,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21002003', 'Hrishita Kashyap', 'N?', to_date('1921-03-29', 'YYYY-MM-DD'), '92/27 Vala Ganj Tadepalligudem', '+911812359715', 'VP', 'CNPM', 34, 7.49);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21002004', 'Keya Rau', 'Nam', to_date('1988-04-12', 'YYYY-MM-DD'), '309 D¡¯Alia Path Yamunanagar', '05116149979', 'VP', 'HTTT', 47, 9.46);
+VALUES ('SV21002004', 'Keya Rau', 'Nam', to_date('1988-04-12', 'YYYY-MM-DD'), '309 Dï¿½ï¿½Alia Path Yamunanagar', '05116149979', 'VP', 'HTTT', 47, 9.46);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21002005', 'Ritvik Bava', 'Nam', to_date('1933-10-21', 'YYYY-MM-DD'), '46/79 Talwar Chowk Malegaon', '07766385627', 'CQ', 'CNTT', 125, 7.84);
@@ -6751,7 +6751,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21002093', 'Aradhya Biswas', 'Nam', to_date('2023-10-26', 'YYYY-MM-DD'), '72/613 Char Circle Sagar', '+910926875642', 'CLC', 'HTTT', 61, 7.76);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21002094', 'Samaira Sant', 'Nam', to_date('1983-11-20', 'YYYY-MM-DD'), 'H.No. 912 D¡¯Alia Marg Maheshtala', '+912115097871', 'CTTT', 'KHMT', 98, 4.15);
+VALUES ('SV21002094', 'Samaira Sant', 'Nam', to_date('1983-11-20', 'YYYY-MM-DD'), 'H.No. 912 Dï¿½ï¿½Alia Marg Maheshtala', '+912115097871', 'CTTT', 'KHMT', 98, 4.15);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21002095', 'Mohanlal Chandran', 'N?', to_date('1929-05-24', 'YYYY-MM-DD'), '71/038 Khurana Road Bhatpara', '+910554725557', 'CTTT', 'CNPM', 72, 4.35);
@@ -7177,7 +7177,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21002235', 'Shaan Basak', 'N?', to_date('1975-07-29', 'YYYY-MM-DD'), 'H.No. 48 Sarna Ganj Aurangabad', '+912027709335', 'CQ', 'HTTT', 7, 9.08);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21002236', 'Drishya Maharaj', 'Nam', to_date('1958-08-22', 'YYYY-MM-DD'), '329 Sandal Circle Hubli¨CDharwad', '06695433985', 'VP', 'KHMT', 65, 4.74);
+VALUES ('SV21002236', 'Drishya Maharaj', 'Nam', to_date('1958-08-22', 'YYYY-MM-DD'), '329 Sandal Circle Hubliï¿½CDharwad', '06695433985', 'VP', 'KHMT', 65, 4.74);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21002237', 'Aarav Bir', 'Nam', to_date('1977-11-08', 'YYYY-MM-DD'), 'H.No. 719 Deol Circle Panchkula', '09575235846', 'CTTT', 'TGMT', 0, 5.57);
@@ -7918,7 +7918,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21002482', 'Keya Anand', 'N?', to_date('2004-01-04', 'YYYY-MM-DD'), 'H.No. 777 Venkataraman South Dumdum', '+913452213242', 'CQ', 'HTTT', 2, 8.3);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21002483', 'Himmat Roy', 'N?', to_date('1928-04-06', 'YYYY-MM-DD'), 'H.No. 08 D¡¯Alia Marg Kochi', '05039991793', 'VP', 'TGMT', 37, 9.63);
+VALUES ('SV21002483', 'Himmat Roy', 'N?', to_date('1928-04-06', 'YYYY-MM-DD'), 'H.No. 08 Dï¿½ï¿½Alia Marg Kochi', '05039991793', 'VP', 'TGMT', 37, 9.63);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21002484', 'Umang Sibal', 'N?', to_date('1989-09-05', 'YYYY-MM-DD'), '82 Shenoy Nagar Ambala', '5882316605', 'VP', 'CNTT', 117, 5.54);
@@ -8629,7 +8629,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21002719', 'Baiju Kannan', 'Nam', to_date('1965-04-13', 'YYYY-MM-DD'), '78/729 Tak Barasat', '+914271256694', 'CQ', 'CNTT', 84, 8.31);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21002720', 'Amani Grewal', 'Nam', to_date('1914-03-11', 'YYYY-MM-DD'), 'H.No. 326 D¡¯Alia Road Mangalore', '5498828681', 'VP', 'KHMT', 62, 5.22);
+VALUES ('SV21002720', 'Amani Grewal', 'Nam', to_date('1914-03-11', 'YYYY-MM-DD'), 'H.No. 326 Dï¿½ï¿½Alia Road Mangalore', '5498828681', 'VP', 'KHMT', 62, 5.22);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21002721', 'Gatik Bhargava', 'Nam', to_date('1930-03-26', 'YYYY-MM-DD'), '98/711 Krish Varanasi', '+910069216267', 'CQ', 'CNPM', 107, 4.87);
@@ -8728,7 +8728,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21002752', 'Alia Zachariah', 'N?', to_date('2016-10-27', 'YYYY-MM-DD'), '630 Bhandari Marg Bhilai', '+912700884145', 'CQ', 'CNTT', 92, 7.69);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21002753', 'Stuvan D¡¯Alia', 'Nam', to_date('1908-10-25', 'YYYY-MM-DD'), '17 Bora Road Amroha', '+918656184123', 'CTTT', 'CNTT', 119, 5.74);
+VALUES ('SV21002753', 'Stuvan Dï¿½ï¿½Alia', 'Nam', to_date('1908-10-25', 'YYYY-MM-DD'), '17 Bora Road Amroha', '+918656184123', 'CTTT', 'CNTT', 119, 5.74);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21002754', 'Vidur Chakraborty', 'Nam', to_date('1934-10-23', 'YYYY-MM-DD'), '231 Anand Path Kulti', '8161032352', 'CTTT', 'TGMT', 102, 4.6);
@@ -9322,7 +9322,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21002950', 'Seher Sharaf', 'Nam', to_date('1977-11-24', 'YYYY-MM-DD'), 'H.No. 287 Dora Zila Kota', '+911546619661', 'VP', 'TGMT', 100, 7.35);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21002951', 'Navya Kalita', 'Nam', to_date('1991-06-08', 'YYYY-MM-DD'), 'H.No. 19 Borah Ganj Hubli¨CDharwad', '7680945718', 'VP', 'MMT', 119, 6.58);
+VALUES ('SV21002951', 'Navya Kalita', 'Nam', to_date('1991-06-08', 'YYYY-MM-DD'), 'H.No. 19 Borah Ganj Hubliï¿½CDharwad', '7680945718', 'VP', 'MMT', 119, 6.58);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21002952', 'Rania Sarna', 'N?', to_date('1994-10-02', 'YYYY-MM-DD'), 'H.No. 468 Vaidya Street Aizawl', '06310463527', 'VP', 'MMT', 31, 9.66);
@@ -9688,7 +9688,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003072', 'Riaan Ray', 'N?', to_date('1912-09-21', 'YYYY-MM-DD'), '024 Barman Ganj Kakinada', '07024110311', 'VP', 'MMT', 25, 5.57);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003073', 'Aaryahi Saran', 'N?', to_date('1926-05-19', 'YYYY-MM-DD'), 'H.No. 03 Tank Nagar Hubli¨CDharwad', '05969058083', 'CTTT', 'MMT', 130, 7.72);
+VALUES ('SV21003073', 'Aaryahi Saran', 'N?', to_date('1926-05-19', 'YYYY-MM-DD'), 'H.No. 03 Tank Nagar Hubliï¿½CDharwad', '05969058083', 'CTTT', 'MMT', 130, 7.72);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003074', 'Drishya Sura', 'Nam', to_date('2019-01-05', 'YYYY-MM-DD'), '25 Bali Ganj Bhiwandi', '1002147872', 'CLC', 'MMT', 90, 9.98);
@@ -9808,7 +9808,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003112', 'Amira Vohra', 'Nam', to_date('1964-11-14', 'YYYY-MM-DD'), '15/707 Bhat Zila Bidhannagar', '+917918529497', 'CLC', 'CNPM', 109, 8.65);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003113', 'Lakshay Karnik', 'Nam', to_date('1979-04-27', 'YYYY-MM-DD'), '086 Warrior Chowk Hubli¨CDharwad', '+913209736276', 'CLC', 'TGMT', 79, 5.22);
+VALUES ('SV21003113', 'Lakshay Karnik', 'Nam', to_date('1979-04-27', 'YYYY-MM-DD'), '086 Warrior Chowk Hubliï¿½CDharwad', '+913209736276', 'CLC', 'TGMT', 79, 5.22);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003114', 'Sumer Balan', 'Nam', to_date('2005-11-12', 'YYYY-MM-DD'), 'H.No. 30 Kaul Road Khammam', '06222115108', 'CLC', 'CNPM', 103, 9.39);
@@ -10051,7 +10051,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003193', 'Kiaan Sheth', 'N?', to_date('1949-07-18', 'YYYY-MM-DD'), 'H.No. 44 Mammen Road Karaikudi', '3560376107', 'CLC', 'TGMT', 107, 8.51);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003194', 'Onkar Gulati', 'Nam', to_date('2018-12-29', 'YYYY-MM-DD'), '61/866 D¡¯Alia Zila Sikar', '04180993590', 'VP', 'KHMT', 46, 6.08);
+VALUES ('SV21003194', 'Onkar Gulati', 'Nam', to_date('2018-12-29', 'YYYY-MM-DD'), '61/866 Dï¿½ï¿½Alia Zila Sikar', '04180993590', 'VP', 'KHMT', 46, 6.08);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003195', 'Dhanush Mangat', 'N?', to_date('1971-07-12', 'YYYY-MM-DD'), 'H.No. 55 Kanda Chowk Pondicherry', '08685651714', 'CTTT', 'HTTT', 47, 4.23);
@@ -10486,7 +10486,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003338', 'Anahi Barad', 'N?', to_date('1976-05-03', 'YYYY-MM-DD'), 'H.No. 14 Dass Marg Faridabad', '7938195830', 'CLC', 'KHMT', 90, 6.67);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003339', 'Divyansh Hayer', 'Nam', to_date('1919-04-05', 'YYYY-MM-DD'), 'H.No. 657 Rastogi Circle Hubli¨CDharwad', '04606439381', 'CLC', 'TGMT', 60, 4.36);
+VALUES ('SV21003339', 'Divyansh Hayer', 'Nam', to_date('1919-04-05', 'YYYY-MM-DD'), 'H.No. 657 Rastogi Circle Hubliï¿½CDharwad', '04606439381', 'CLC', 'TGMT', 60, 4.36);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003340', 'Tushar Mallick', 'N?', to_date('1939-07-21', 'YYYY-MM-DD'), '65 Karan Ganj Pondicherry', '8114168714', 'CTTT', 'KHMT', 11, 5.09);
@@ -10630,7 +10630,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003386', 'Jayant Ramakrishnan', 'N?', to_date('2016-01-01', 'YYYY-MM-DD'), '00/098 Banik Path Erode', '09967544022', 'CTTT', 'KHMT', 52, 5.03);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003387', 'Hunar Bhatti', 'N?', to_date('1913-08-23', 'YYYY-MM-DD'), '18/77 D¡¯Alia Zila Bhalswa Jahangir Pur', '+919530097940', 'CLC', 'KHMT', 45, 4.99);
+VALUES ('SV21003387', 'Hunar Bhatti', 'N?', to_date('1913-08-23', 'YYYY-MM-DD'), '18/77 Dï¿½ï¿½Alia Zila Bhalswa Jahangir Pur', '+919530097940', 'CLC', 'KHMT', 45, 4.99);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003388', 'Mahika Bera', 'Nam', to_date('1937-11-28', 'YYYY-MM-DD'), 'H.No. 366 Guha Road Gopalpur', '00949594663', 'CQ', 'KHMT', 0, 7.67);
@@ -10654,7 +10654,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003394', 'Taran Bath', 'N?', to_date('1908-08-01', 'YYYY-MM-DD'), '19/87 Kala Path Firozabad', '6208460453', 'CTTT', 'CNPM', 87, 5.41);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003395', 'Rania Butala', 'Nam', to_date('1930-08-16', 'YYYY-MM-DD'), '44 Bhardwaj Road Hubli¨CDharwad', '05170950058', 'CLC', 'TGMT', 90, 5.34);
+VALUES ('SV21003395', 'Rania Butala', 'Nam', to_date('1930-08-16', 'YYYY-MM-DD'), '44 Bhardwaj Road Hubliï¿½CDharwad', '05170950058', 'CLC', 'TGMT', 90, 5.34);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003396', 'Neysa Lanka', 'Nam', to_date('1923-07-30', 'YYYY-MM-DD'), 'H.No. 578 Jayaraman Street Allahabad', '+910741701780', 'VP', 'HTTT', 96, 5.36);
@@ -11203,7 +11203,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003577', 'Pihu Salvi', 'N?', to_date('1975-05-11', 'YYYY-MM-DD'), 'H.No. 144 Loyal Circle Kadapa', '+917490177716', 'VP', 'CNPM', 57, 7.87);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003578', 'Dishani Hegde', 'N?', to_date('2011-10-27', 'YYYY-MM-DD'), 'H.No. 501 D¡¯Alia Zila Saharsa', '0993403276', 'VP', 'TGMT', 7, 6.74);
+VALUES ('SV21003578', 'Dishani Hegde', 'N?', to_date('2011-10-27', 'YYYY-MM-DD'), 'H.No. 501 Dï¿½ï¿½Alia Zila Saharsa', '0993403276', 'VP', 'TGMT', 7, 6.74);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003579', 'Vivaan Desai', 'N?', to_date('1972-11-05', 'YYYY-MM-DD'), 'H.No. 76 Ravel Path Rampur', '+918802786970', 'CQ', 'CNTT', 51, 5.16);
@@ -11518,7 +11518,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003682', 'Hridaan Biswas', 'Nam', to_date('1996-12-03', 'YYYY-MM-DD'), '74/822 Datta Circle Kollam', '6496040571', 'CQ', 'CNTT', 129, 5.27);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003683', 'Romil Wagle', 'N?', to_date('1973-03-13', 'YYYY-MM-DD'), '493 D¡¯Alia Zila Dharmavaram', '+915147895840', 'VP', 'MMT', 10, 5.09);
+VALUES ('SV21003683', 'Romil Wagle', 'N?', to_date('1973-03-13', 'YYYY-MM-DD'), '493 Dï¿½ï¿½Alia Zila Dharmavaram', '+915147895840', 'VP', 'MMT', 10, 5.09);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003684', 'Ehsaan Wali', 'Nam', to_date('1917-11-13', 'YYYY-MM-DD'), 'H.No. 748 Jha Kamarhati', '08074319105', 'CTTT', 'CNPM', 131, 7.98);
@@ -12028,7 +12028,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003852', 'Priyansh Balasubramanian', 'Nam', to_date('1929-07-17', 'YYYY-MM-DD'), '96/56 Bhatia Nagar Rajkot', '00171766118', 'VP', 'HTTT', 22, 6.93);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003853', 'Elakshi Sen', 'N?', to_date('1953-05-27', 'YYYY-MM-DD'), 'H.No. 091 D¡¯Alia Ganj Gopalpur', '05412085887', 'CLC', 'KHMT', 97, 8.06);
+VALUES ('SV21003853', 'Elakshi Sen', 'N?', to_date('1953-05-27', 'YYYY-MM-DD'), 'H.No. 091 Dï¿½ï¿½Alia Ganj Gopalpur', '05412085887', 'CLC', 'KHMT', 97, 8.06);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003854', 'Amani Hora', 'N?', to_date('1940-09-23', 'YYYY-MM-DD'), '21 Vyas Jammu', '+910733665466', 'VP', 'CNTT', 12, 6.5);
@@ -12097,7 +12097,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003875', 'Prisha Buch', 'N?', to_date('1994-07-21', 'YYYY-MM-DD'), '02/64 Andra Marg Giridih', '01612031531', 'CTTT', 'MMT', 48, 9.84);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003876', 'Lakshay Gopal', 'N?', to_date('1982-12-20', 'YYYY-MM-DD'), '12 D¡¯Alia Zila Singrauli', '+914482107564', 'CTTT', 'HTTT', 32, 7.63);
+VALUES ('SV21003876', 'Lakshay Gopal', 'N?', to_date('1982-12-20', 'YYYY-MM-DD'), '12 Dï¿½ï¿½Alia Zila Singrauli', '+914482107564', 'CTTT', 'HTTT', 32, 7.63);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003877', 'Dharmajan Sharaf', 'Nam', to_date('1994-09-19', 'YYYY-MM-DD'), 'H.No. 102 Ravel Nagar Dindigul', '+919404637539', 'CQ', 'CNTT', 69, 6.61);
@@ -12388,7 +12388,7 @@ INSERT INTO SINHVIEN
 VALUES ('SV21003972', 'Jivin Sandhu', 'N?', to_date('1996-04-08', 'YYYY-MM-DD'), 'H.No. 842 Buch Nagar Panchkula', '02856032637', 'CQ', 'CNPM', 68, 4.6);
 
 INSERT INTO SINHVIEN
-VALUES ('SV21003973', 'Nitara Grover', 'N?', to_date('1911-04-29', 'YYYY-MM-DD'), '80/193 Dey Nagar Hubli¨CDharwad', '2013517341', 'VP', 'TGMT', 97, 9.94);
+VALUES ('SV21003973', 'Nitara Grover', 'N?', to_date('1911-04-29', 'YYYY-MM-DD'), '80/193 Dey Nagar Hubliï¿½CDharwad', '2013517341', 'VP', 'TGMT', 97, 9.94);
 
 INSERT INTO SINHVIEN
 VALUES ('SV21003974', 'Emir Bhatnagar', 'N?', to_date('1911-10-06', 'YYYY-MM-DD'), 'H.No. 901 Gopal Yamunanagar', '07742222405', 'CTTT', 'CNTT', 137, 9.39);
@@ -12480,15 +12480,15 @@ update DONVI set TRGDV = 'NS04000005' where MADV = 'DV0006';
 update DONVI set TRGDV = 'NS04000006' where MADV = 'DV0007';
 
 INSERT INTO HOCPHAN
-VALUES ('HP001', 'Toán cao c?p', 3, 30, 15, 50, 'DV0001');
+VALUES ('HP001', 'Toï¿½n cao c?p', 3, 30, 15, 50, 'DV0001');
 INSERT INTO HOCPHAN
-VALUES ('HP002', 'L?p trình Java', 4, 40, 20, 60, 'DV0002');
+VALUES ('HP002', 'L?p trï¿½nh Java', 4, 40, 20, 60, 'DV0002');
 INSERT INTO HOCPHAN
-VALUES ('HP003', 'C?u trúc d? li?u v? gi?i thu?t', 3, 30, 15, 50, 'DV0003');
+VALUES ('HP003', 'C?u trï¿½c d? li?u v? gi?i thu?t', 3, 30, 15, 50, 'DV0003');
 INSERT INTO HOCPHAN
 VALUES ('HP004', 'H? qu?n tr? c? s? d? li?u', 4, 40, 20, 60, 'DV0004');
 INSERT INTO HOCPHAN
-VALUES ('HP005', 'M?ng máy tính', 3, 30, 15, 50, 'DV0005');
+VALUES ('HP005', 'M?ng mï¿½y tï¿½nh', 3, 30, 15, 50, 'DV0005');
 /
 INSERT INTO KHMO
 VALUES ('HP001', 1, 2023, 'CQ');

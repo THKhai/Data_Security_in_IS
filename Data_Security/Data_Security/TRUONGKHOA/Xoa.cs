@@ -170,7 +170,7 @@ namespace Data_Security.TRUONGKHOA
                     if (tablename == "DANGKY")
                     {
                         query = "DELETE FROM ADMINLC." + tablename + " WHERE MASV = '"
-                            + textBox1.Text.ToString() + "' AND MAGP = '"
+                            + textBox1.Text.ToString() + "' AND MAGV = '"
                             + textBox2.Text.ToString() + "' AND MAHP = '"
                             + textBox3.Text.ToString() + "' AND HK = "
                             + textBox4.Text.ToString() + " AND NAM = "
