@@ -12,7 +12,7 @@ as
     from ADMINLC.NhanSu
     where manv = sys_context('USERENV', 'SESSION_USER');
     
-    
+/
 grant select,update(DT) on  ADMINLC.V_NhanSu to R_NhanSu;
 grant select on ADMINLC.SINHVIEN to R_NhanSu;
 grant select on ADMINLC.DONVI to R_NhanSu;
@@ -38,13 +38,12 @@ END;
 /
 --
 exec GRANT_ROLE_NS;
-
-
 -- cs2
 -- 
 connect ADMINLC/ADMINLC;
 /
 alter session set"_ORACLE_SCRIPT" = true;
+--DROP ROLE R_GIANGVIEN;
 create role R_GiangVien;
 alter session set"_ORACLE_SCRIPT" = false;
 /

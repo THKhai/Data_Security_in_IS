@@ -198,7 +198,7 @@ namespace Data_Security.GIANGVIEN
 
             using (OracleConnection con = new OracleConnection(StrConnecting))
             {
-                var STDquery = "update ADMINLC.V_DANGKY_GV set DIEMTHI = " + mark[0] + ", DIEMQT = "+mark[1] +", DIEMCK = " + mark[3] +", DIEMTK = "+ mark[4] +" where MAHP = '" + current +"'";
+                var STDquery = "update ADMINLC.V_DANGKY_GV set DIEMTHI = " + mark[0] + ", DIEMQT = "+mark[1] +", DIEMCK = " + mark[2] +", DIEMTK = "+ mark[3] +" where MAHP = '" + current +"'";
                 OracleDataAdapter adapter = new OracleDataAdapter(STDquery, con);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);

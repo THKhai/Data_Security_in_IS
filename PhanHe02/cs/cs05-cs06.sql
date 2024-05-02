@@ -1,6 +1,6 @@
 connect ADMINLC/ADMINLC;
 --CS#5
-alter session set "_ORACLE_SCRIPT"=true;  
+alter session set "_ORACLE_SCRIPT"=true;
 CREATE ROLE TruongKhoa;
 
 CREATE OR REPLACE VIEW v_TruongKhoa
@@ -22,7 +22,7 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT SELECT ON ' || t.TABLE_NAME || ' TO TruongKhoa';
   END LOOP;
 END;
-
+/
 CREATE OR REPLACE PROCEDURE GRANT_ROLE_TRUONGKHOA
 AS
     CURSOR CUR IS (select MANV
@@ -43,8 +43,6 @@ BEGIN
 END;
 /
 EXEC GRANT_ROLE_TRUONGKHOA;
-
-
 --CS#6
 --USER DEMO
 --POLICY FUNCTIONS
@@ -187,7 +185,7 @@ BEGIN
         object_name      => 'KHMO', 
         policy_name      => 'HP_KHMO_policy2',
         function_schema  => 'ADMINLC', 
-        policy_function  => 'HP_KHMO_policy_function',
+        policy_function  => 'HP_KHMO_policy_function2',
         statement_types  => 'SELECT',
         enable => TRUE
     );
@@ -227,11 +225,9 @@ GRANT SELECT ON ADMINLC.HOCPHAN TO SinhVien;
 GRANT SELECT ON ADMINLC.KHMO TO SinhVien;
 GRANT SELECT, INSERT, DELETE ON ADMINLC.DANGKY TO SinhVien;
 
-
 --EXEC USP_CREATEUSER_SV;
 --CONNECT SV21000001/123;
 --SHOW USER
-select * from donvi;
 ----TEST 1.1
 --grant all on adminlc.SINHVIEN to ADMINLC;
 --
