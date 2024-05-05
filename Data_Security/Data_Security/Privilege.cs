@@ -212,7 +212,7 @@ namespace Data_Security
             {
                 using (OracleConnection con = new OracleConnection(connectString))
                 {
-                    var query = "select distinct GRANTEE, TABLE_NAME from ALL_TAB_PRIVS order by GRANTEE";
+                    var query = "select distinct GRANTEE, TABLE_NAME from USER_TAB_PRIVS order by GRANTEE";
                     OracleDataAdapter adapter = new OracleDataAdapter(query, con);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);

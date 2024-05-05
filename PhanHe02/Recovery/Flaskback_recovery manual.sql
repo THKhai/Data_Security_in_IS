@@ -13,7 +13,7 @@ alter database open;
 create restore point rp1;
 select scn,time,name from v$restore_point;
 drop restore point rp1;
-
+--r¨¦tore
  rman target /
 shutdown immediate;
 startup mount;

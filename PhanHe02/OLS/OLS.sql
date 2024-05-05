@@ -92,7 +92,7 @@ SELECT * FROM DBA_SA_GROUP_HIERARCHY;
 /
 
 -- create table THONGBAO
------------------------------------
+----------------------------------- 
 --connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 DROP TABLE THONGBAO;
 -----------------------------------
@@ -412,3 +412,4 @@ BEGIN
     CLOSE CUR;
 end;
 /
+select* from ADMIN_OLS.THONGBAO;
