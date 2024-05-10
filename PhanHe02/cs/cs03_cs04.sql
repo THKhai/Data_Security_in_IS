@@ -1,5 +1,4 @@
 connect ADMINLC/ADMINLC;
-
 --CS3
 alter session set"_ORACLE_SCRIPT" = true;
 create role R_GiaoVu;
@@ -38,10 +37,11 @@ END;
 /
 EXEC GRANT_ROLE_GIAOVU;
 
-connect NS03000001/NS03000001
+connect NS03000001/NS03000001;
 select * from ADMINLC.SINHVIEN;
 --CS4
 alter session set"_ORACLE_SCRIPT" = true;
+--drop role r_truongdonvi
 create role R_TRUONGDONVI;
 grant R_GiangVien to R_TRUONGDONVI;
 

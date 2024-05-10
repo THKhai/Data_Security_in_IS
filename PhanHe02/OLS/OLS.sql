@@ -1,19 +1,20 @@
 SELECT VALUE FROM v$option WHERE parameter = 'Oracle Label Security';
 SELECT status FROM dba_ols_status WHERE name = 'OLS_CONFIGURE_STATUS';
 EXEC LBACSYS.CONFIGURE_OLS;
-EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS;
---
-SHUTDOWN IMMEDIATE;
-STARTUP;
-/
-ALTER USER lbacsys IDENTIFIED BY lbacsys ACCOUNT UNLOCK CONTAINER=ALL ;
-ALTER PLUGGABLE DATABASE DBA_SECURITY  OPEN READ WRITE;
-ALTER SESSION SET CONTAINER= DBA_SECURITY;
+EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS; 
+---> UNLOCK LBACSYS (OLS ADMIN)
+ALTER USER lbacsys IDENTIFIED BY lbacsys ACCOUNT UNLOCK ;
+select * from v$services; 
+---> N?U C? R?I TH? M? PDB
+ALTER PLUGGABLE DATABASE XEPDB1 OPEN READ WRITE;
+---> CHUY?N QUA PDB
+ALTER SESSION SET CONTAINER= XEPDB1;
 SHOW CON_NAME;
+--
 
 --drop user ADMIN_OLS cascade;
 alter session set "_ORACLE_SCRIPT" = true;
-Drop user ADMIN_OLS;
+Drop user ADMIN_OLS CASCADE;
 alter session set "_ORACLE_SCRIPT" = false;  
 
 
@@ -28,6 +29,7 @@ GRANT EXECUTE ON LBACSYS.sa_user_admin TO ADMIN_OLS WITH GRANT OPTION;
 GRANT EXECUTE ON LBACSYS.sa_label_admin TO ADMIN_OLS WITH GRANT OPTION;
 GRANT EXECUTE ON sa_policy_admin TO ADMIN_OLS WITH GRANT OPTION;
 GRANT EXECUTE ON char_to_label TO ADMIN_OLS WITH GRANT OPTION;
+GRANT EXECUTE ON LBACSYS.LBAC_STANDARD to ADMIN_OLS WITH GRANT OPTION;
 /
 GRANT LBAC_DBA TO ADMIN_OLS;
 GRANT EXECUTE ON sa_sysdba TO ADMIN_OLS;
@@ -35,16 +37,14 @@ GRANT EXECUTE ON TO_LBAC_DATA_LABEL TO ADMIN_OLS; -- C?P QUY?N TH?C THI
 
  -- C?P QUY?N TH?C THI
 
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY;
-CONNECT ADMIN_OLS/123@DESKTOP-OB2NBQU:1521/PDBQLDL;
 
 -- create policy ols
 ----------------------------------------------------------
 --select* from all_SA_LABELS;
 ----/
---begin
---    SA_SYSDBA.DROP_POLICY( policy_name => 'Notification_Policy');
---end;
+begin
+    SA_SYSDBA.DROP_POLICY( policy_name => 'Notification_Policy');
+end;
 /
 --select* from all_SA_LABELS;
 ------------------------------------------------------------
@@ -59,8 +59,9 @@ end;
 --connect lbacsys/lbacsys;
 --GRANT  Notification_Policy_dba TO ADMIN_OLS;
 --commit;
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
-EXEC SA_SYSDBA.ENABLE_POLICY ('Notification_Policy');
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY    
+EXECUTE SA_SYSDBA.ENABLE_POLICY ('Notification_Policy');
+
 -- tao componenet c?a label
 -- tao level
 EXECUTE SA_COMPONENTS.CREATE_LEVEL('Notification_Policy',60,'TK','TruongKhoa');
@@ -82,20 +83,20 @@ EXECUTE SA_COMPONENTS.CREATE_GROUP('Notification_Policy',140,'cs2','CO SO 2');
 
 -- check COMPONENT
 
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 
-SELECT * FROM DBA_SA_LEVELS;
+SELECT * FROM DBA_SA_LEVELS; 
 SELECT * FROM DBA_SA_GROUPS;
 SELECT* FROM DBA_SA_COMPARTMENTS;
 SELECT * FROM DBA_SA_GROUP_HIERARCHY;
 /
 
 -- create table THONGBAO
------------------------------------
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
+----------------------------------- 
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 DROP TABLE THONGBAO;
 -----------------------------------
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 create table THONGBAO(
     MATB varchar2(10) primary key,
     NOIDUNG varchar2(2000) 
@@ -106,13 +107,13 @@ insert into THONGBAO values ('TB00000003','THONG BAO 03: LAM BAI');
 insert into THONGBAO values ('TB00000004','THONG BAO 04: NOP BAI');
 insert into THONGBAO values ('TB00000005','THONG BAO 05: TRA BAI');
 
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY;
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY;
 select* from ADMIN_OLS.THONGBAO;
 /
 --select* from ADMIN_OLS.THONGBAO;
 -- Cap Nhat Nhan Trong Bang
 
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 BEGIN
     SA_POLICY_ADMIN.APPLY_TABLE_POLICY (
     POLICY_NAME => 'Notification_Policy',
@@ -123,7 +124,7 @@ BEGIN
 END;
 /
 -- tao nhan 
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 UPDATE THONGBAO set Notification_Label = CHAR_TO_LABEL('Notification_Policy','TK:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2')
 where MATB = 'TB00000001';
 UPDATE THONGBAO set  Notification_Label = CHAR_TO_LABEL('Notification_Policy','TK')
@@ -135,9 +136,12 @@ where MATB = 'TB00000004';
 UPDATE THONGBAO set  Notification_Label = CHAR_TO_LABEL('Notification_Policy','SV:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2')
 where MATB = 'TB00000005';
 
+UPDATE ADMIN_OLS.thongbao
+SET Notification_Label = CHAR_TO_LABEL('Notification_Policy','SV'); 
+
 --Ap dung OLS vao bang
 
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 BEGIN
     SA_POLICY_ADMIN.REMOVE_TABLE_POLICY(policy_name => 'Notification_Policy',
     schema_name => 'ADMIN_OLS',
@@ -151,10 +155,12 @@ begin
     policy_name => 'Notification_Policy',
     schema_name => 'ADMIN_OLS',
     table_name => 'THONGBAO',
-    table_options => 'LABEL_DEFAULT,write_CONTROL,READ_CONTROL',
+    table_options => 'LABEL_DEFAULT,WRITE_CONTROL,READ_CONTROL',
     predicate => NULL
     );
 END;
+
+UPDATE THONGBAO set MATB = MATB;
 --- finish setting
 /
 --connect lbacsys/lbacsys;
@@ -181,8 +187,9 @@ END;
 connect ADMINLC/ADMINLC;
 GRANT SELECT on ADMINLC.NHANSU to ADMIN_OLS;
 GRANT SELECT on ADMINLC.SINHVIEN to ADMIN_OLS;
-
-connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
+select* from ALL_SA_LABELS;
+select* from ADMIN_OLS.THONGBAO;
+--connect ADMIN_OLS/ADMIN_OLS@localhost:1521/DBA_SECURITY 
 CREATE OR REPLACE PROCEDURE SET_LABELS_TK AS
     CURSOR CUR IS (SELECT MANV FROM ADMINLC.NHANSU WHERE MANV LIKE 'NS05%');
     STRSQL VARCHAR2(2000);
@@ -201,18 +208,19 @@ BEGIN
         SA_USER_ADMIN.SET_USER_LABELS(
             policy_name => 'Notification_Policy',
             user_name => USER_NAME,
-            max_read_label => 'TK:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2',
-            max_write_label => 'TK',
-            min_write_label => 'TK',
-            def_label       => 'TK:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2',
-            row_label       => 'TK:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+            max_read_label => 'TK:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+--            max_write_label => 'TK',
+--            min_write_label => 'TK',
+--            def_label       => 'TK:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2',
+--            row_label       => 'TK:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
         );
     END LOOP;
     CLOSE CUR;
 END;
 /
 EXEC SET_LABELS_TK;
-
+CONNECT NS05000001/NS05000001@localhost:1521/XEPDB1 ;
+select* from ADMIN_OLS.THONGBAO;
 -- cau b
 create or replace procedure SET_LABELS_TBM as
     CURSOR CUR IS (SELECT MANV FROM ADMINLC.NHANSU WHERE MANV LIKE 'NS04%');
@@ -227,7 +235,6 @@ BEGIN
         -- C?p quy?n SELECT cho ng??i d¨´ng
         STRSQL := 'GRANT SELECT ON ADMIN_OLS.THONGBAO TO ' || USER_NAME;
         EXECUTE IMMEDIATE STRSQL;
-        
         -- Thi?t l?p nh?n cho ng??i d¨´ng
         SA_USER_ADMIN.SET_USER_LABELS(
             policy_name => 'Notification_Policy',
@@ -285,8 +292,8 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
---cau e
 EXEC SET_T1_TDV('TB00000001');
+--cau e
 create or replace procedure SET_T2_SV(MA in varchar2) as
     STRSQL VARCHAR2(200);
 BEGIN
@@ -294,6 +301,7 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
+EXEC SET_T2_SV('TB00000002');
 --cau f
 create or replace procedure SET_T3_TBM_CS1(MA in varchar2) as
     STRSQL VARCHAR2(200);
@@ -303,6 +311,7 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
+EXEC SET_T3_TBM_CS1('TB00000003')
 --cau g
 create or replace procedure SET_T4_TBM_CS12(MA in varchar2) as
     STRSQL VARCHAR2(200);
@@ -312,6 +321,7 @@ BEGIN
         EXECUTE IMMEDIATE STRSQL USING MA;
 END;
 /
+EXEC SET_T3_TBM_CS1('TB00000004')
 
 --h.
 --CS1: Giao vien duoc xem cac thong bao lien quan den giao vien, khong phan biet co so
@@ -392,7 +402,7 @@ BEGIN
         SA_USER_ADMIN.SET_USER_LABELS(
             policy_name => 'Notification_Policy',
             user_name => USER_NAME,
-            max_read_label => 'GVU,GV,SV:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
+            max_read_label => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2'
 --            max_write_label => 'GVU',
 --            min_write_label => 'GVU',
 --            def_label       => 'GVU:MMT,TGMT,CNTT,KHMT,CNPM,HTTT:cs1,cs2',
@@ -402,3 +412,4 @@ BEGIN
     CLOSE CUR;
 end;
 /
+select* from ADMIN_OLS.THONGBAO;

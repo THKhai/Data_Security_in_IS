@@ -7,6 +7,6 @@ GRANT datapump_exp_full_database TO SYSTEM;
 grant datapump_imp_full_database to ADMINLC;
 grant datapump_imp_full_database to SYSTEM;
 
-expdp ADMINLC/ADMINLC@XE PARFILE = 'C:\backup\table.par'
+expdp ADMINLC/ADMINLC@XE PARFILE = 'D:\code_micro\oracle\AnToan\Data_Security_in_IS\PhanHe02\Recovery\DataPump\table.par'
 
 impdp ADMINLC/ADMINLC@XE DIRECTORY=recovery_data_pump DUMPFILE=adminlc_table.dmp LOGFILE=table_lg.log TABLES=SINHVIEN REMAP_TABLE=ADMINLC.SINHVIEN:SINHVIEN2 

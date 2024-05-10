@@ -1,6 +1,6 @@
 connect ADMINLC/ADMINLC;
 --CS#5
-alter session set "_ORACLE_SCRIPT"=true;  
+alter session set "_ORACLE_SCRIPT"=true;
 CREATE ROLE TruongKhoa;
 
 CREATE OR REPLACE VIEW v_TruongKhoa
@@ -9,7 +9,7 @@ SELECT PC.*
 FROM ADMINLC.PHANCONG PC
 JOIN ADMINLC.HOCPHAN HP ON PC.MAHP = HP.MAHP
 JOIN ADMINLC.DONVI DV ON HP.MADV = DV.MADV
-WHERE DV.TENDV = 'V?n phòng khoa';
+WHERE DV.MADV = 'DV0001';
 /
 GRANT INSERT,DELETE,UPDATE ON v_TruongKhoa TO TruongKhoa;
 GRANT SELECT, INSERT, DELETE, UPDATE ON ADMINLC.NHANSU TO TruongKhoa;
@@ -22,7 +22,7 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT SELECT ON ' || t.TABLE_NAME || ' TO TruongKhoa';
   END LOOP;
 END;
-
+/
 CREATE OR REPLACE PROCEDURE GRANT_ROLE_TRUONGKHOA
 AS
     CURSOR CUR IS (select MANV
@@ -41,10 +41,8 @@ BEGIN
    END LOOP;
    CLOSE CUR;
 END;
-
+/
 EXEC GRANT_ROLE_TRUONGKHOA;
-
-
 --CS#6
 --USER DEMO
 --POLICY FUNCTIONS
@@ -112,6 +110,7 @@ BEGIN
         policy_name     => 'SV_policy2'
     );
 END;
+/
 --2.
 BEGIN
     DBMS_RLS.DROP_POLICY (
@@ -134,6 +133,7 @@ BEGIN
         policy_name     => 'DK_policy1'
     );
 END;
+/
 --4
 BEGIN
     DBMS_RLS.DROP_POLICY (
@@ -154,7 +154,9 @@ dbms_rls.add_policy (
     statement_types => 'SELECT',
     enable => TRUE
 );  
-
+END;
+/
+Begin
 --1.2 UPDATE
 dbms_rls.add_policy (
     object_schema => 'ADMINLC',
@@ -175,7 +177,7 @@ BEGIN
         object_name      => 'HOCPHAN', 
         policy_name      => 'HP_KHMO_policy1', 
         function_schema  => 'ADMINLC', 
-        policy_function  => 'HP_KHMO_policy_function',
+        policy_function  => 'HP_KHMO_policy_function2',
         statement_types  => 'SELECT',
         enable => TRUE
     );
@@ -185,7 +187,7 @@ BEGIN
         object_name      => 'KHMO', 
         policy_name      => 'HP_KHMO_policy2',
         function_schema  => 'ADMINLC', 
-        policy_function  => 'HP_KHMO_policy_function',
+        policy_function  => 'HP_KHMO_policy_function2',
         statement_types  => 'SELECT',
         enable => TRUE
     );
@@ -224,64 +226,31 @@ GRANT SELECT, UPDATE ON ADMINLC.SINHVIEN TO SinhVien;
 GRANT SELECT ON ADMINLC.HOCPHAN TO SinhVien;
 GRANT SELECT ON ADMINLC.KHMO TO SinhVien;
 GRANT SELECT, INSERT, DELETE ON ADMINLC.DANGKY TO SinhVien;
+REVOKE SELECT,update ON ADMINLC.SINHVIEN FROM SinhVien;
+GRANT SELECT ON ADMINLC.SINHVIEN to SINHVIEN;
+GRANT UPDATE (DCHI, DT) ON ADMINLC.SINHVIEN TO SinhVien;
+--CONNECT SV21000001/123;
+--SHOW USER
+----TEST 1.1
+--grant all on adminlc.SINHVIEN to ADMINLC;
+--
+--CONNECT SV21003704/123;
+--SELECT *
+--FROM ADMINLC.SINHVIEN;
 
-GRANT SinhVien TO SV21000001;
-
-CREATE OR REPLACE PROCEDURE USP_CREATEUSER_SV
-AS
-    CURSOR CUR IS (SELECT SV.MASV
-                    FROM ADMINLC.SINHVIEN SV
-                    WHERE SV.MASV NOT IN (SELECT USERNAME
-                                            FROM ALL_USERS)
-                );
-    STRSQL VARCHAR(2000);
-    USR VARCHAR2(10);
-BEGIN
-    OPEN CUR;
-        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE' ;
-        EXECUTE IMMEDIATE(STRSQL);
-    LOOP
-        FETCH CUR INTO USR;
-        EXIT WHEN CUR%NOTFOUND;
-        STRSQL := 'CREATE USER  '||USR||' IDENTIFIED BY '||USR;
-        EXECUTE IMMEDIATE (STRSQL);
-        STRSQL := 'GRANT CONNECT TO '||USR;
-        EXECUTE IMMEDIATE (STRSQL);
-        STRSQL := 'GRANT SinhVien TO '||USR;
-        EXECUTE IMMEDIATE (STRSQL);
-    END LOOP;
-        STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE';
-        EXECUTE IMMEDIATE(STRSQL);
-    CLOSE CUR;
-END;
-/
-EXEC USP_CREATEUSER_SV
-CONNECT SV21000001/123;
-SHOW USER
-select * from donvi;
---TEST 1.1
-grant all on adminlc.SINHVIEN to ADMINLC;
-
-CONNECT SV21003704/123;
-SELECT *
-FROM ADMINLC.SINHVIEN;
-
---TEST 1.2
-GRANT UPDATE ON ADMINLC.SINHVIEN TO SV21000001;
-CONNECT SV21000001/123;
-UPDATE ADMINLC.SINHVIEN
-SET DT = '2222395076' WHERE MASV = 'SV21000001'
-
-alter session set "_ORACLE_SCRIPT" =true;
-CREATE USER SV2100000A IDENTIFIED BY 123;
-DROP USER SV2100000A;
-GRANT CONNECT TO SV2100000A;
-GRANT SELECT ON ADMINLC.DANGKY TO SV2100000A;
-CONNECT SV21000001/123;
-SELECT *
-FROM ADMINLC.SINHVIEN
-SELECT *
-FROM ADMIN_OLS.THONGBAO
-GRANT TruongKhoa TO NS05000001;
-
-select value from v$parameter where name like '%service_name%';
+----TEST 1.2
+--GRANT UPDATE ON ADMINLC.SINHVIEN TO SV21000001;
+--CONNECT SV21000001/123;
+--UPDATE ADMINLC.SINHVIEN
+--SET DT = '2222395076' WHERE MASV = 'SV21000001'
+--
+--alter session set "_ORACLE_SCRIPT" =true;
+--CREATE USER SV2100000A IDENTIFIED BY 123;
+--DROP USER SV2100000A;
+--GRANT CONNECT TO SV2100000A;
+--GRANT SELECT ON ADMINLC.DANGKY TO SV2100000A;
+--CONNECT SV21000001/123;
+--SELECT *
+--FROM ADMINLC.HOCPHAN;
+--
+--GRANT TruongKhoa TO NS05000001;
